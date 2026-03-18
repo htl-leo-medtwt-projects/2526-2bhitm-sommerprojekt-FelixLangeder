@@ -1,0 +1,12 @@
+body {
+    background: url('./img/startscreen.webp') fixed;
+    /*background-size: cover;*/
+    background-position: center;
+}
+
+nav {
+    position: relative;
+    top: 65vh;
+    display: flex;
+    justify-content: space-around;
+}
