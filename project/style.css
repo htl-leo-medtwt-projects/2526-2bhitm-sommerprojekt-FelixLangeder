@@ -5,8 +5,14 @@ body {
 }
 
 nav {
-    position: relative;
-    top: 65vh;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 33.3333333%);
+    margin: auto;
+    margin-top: 65vh;
+}
+
+nav img {
+    width: 75%;
+    margin: auto;
+    user-select: none;
 }
