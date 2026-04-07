@@ -19,3 +19,35 @@ function howTo() {
     document.getElementById('lp').style.display = "none"
     document.getElementById('howTo').style.display = "block"
 }
+
+function startLv1() {
+    document.getElementById('levels').style.display = "none"
+    document.getElementById('level1').style.display = "block"
+}
+
+function startLv2() {
+    document.getElementById('levels').style.display = "none"
+    document.getElementById('level2').style.display = "block"
+}
+
+function startLv3() {
+    document.getElementById('levels').style.display = "none"
+    document.getElementById('level3').style.display = "block"
+}
+
+function loadCheckpoint() {
+    //TODO
+}
+
+function goIn1() {
+    document.getElementById('level1').style.display = "none"
+    document.getElementById('rLevel1').style.display = "block"
+}
+
+function goIn2() {
+    //TODO
+}
+
+function goIn3() {
+    //TODO
+}

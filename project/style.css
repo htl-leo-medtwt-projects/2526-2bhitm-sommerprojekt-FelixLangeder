@@ -65,8 +65,9 @@ nav img {
 
 #levelChoice {
     display: grid;
-    grid-template-columns: repeat(3, 3333.3333333%);
+    grid-template-columns: repeat(3, 33.3333333%);
     margin: auto;
+    padding-top: 50vh;
 }
 
 #levelChoice img {
@@ -142,5 +143,34 @@ nav img {
     top: 31vh;
     font-size: 1.7vw;
     width: 75vw;
-    color: rgb(255, 130, 108);
+    color: white;
+}
+
+/*Level 1 */
+#level1, #level2, #level3 {
+    text-align: center;
+    font-size: 260%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/bg.webp') fixed no-repeat;
+    background-size: cover;
+    background-position: top;
+    width: 100vw;
+    height: 100vh;
+}
+
+#level1 img, #level2 img, #level3 img {
+    width: 30%;
+}
+
+.description {
+    width: 60vw;
+    margin: auto;
+    padding: 10vh;
+}
+
+#rLevel1 {
+    background: url('./img/halle.jpg') fixed no-repeat;
+    background-size: cover;
+    background-position: top;
+    width: 100vw;
+    height: 100vh;
 }

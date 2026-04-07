@@ -7,6 +7,7 @@
     <title>Schloss der Finsternis</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <link rel="icon" href="img/icon.jpg">
 </head>
 
 <body>
@@ -21,11 +22,12 @@
     <div id="levels" style="display: none;">
         <img class="back" onclick="lp()" src="img/back.png" alt="back" id="lpButton">
         <div id="levelChoice">
-            <img class="lpButton" src="img/lv1s.jpg" alt="Level1">
-            <img class="lpButton" src="img/lv2s.jpg" alt="Level2">
-            <img class="lpButton" src="img/lv3s.jpg" alt="Level3">
+            <img class="lpButton" onclick="startLv1()" src="img/lv1s.jpg" alt="Level1">
+            <img class="lpButton" onclick="startLv2()" src="img/lv2s.jpg" alt="Level2">
+            <img class="lpButton" onclick="startLv3()" src="img/lv3s.jpg" alt="Level3">
         </div>
-        <img id="lCheckpoint" class="lpButton" src="img/checkpoint.jpg" alt="load Checkpoint">
+        <img id="lCheckpoint" class="lpButton" onclick="loadCheckpoint()" src="img/checkpoint.jpg"
+            alt="load Checkpoint">
     </div>
 
     <div style="display: none;" id="leaderboard">
@@ -38,9 +40,67 @@
     </div>
 
     <div id="howTo" style="display: none;">
-        <div id="howToInfo"><img src="img/box.jpg" alt="Box"><p id="info">In Schloss der Finsternis erwachst du allein in einem kalten, verlassenen Gemäuer, dessen Wände zu flüstern scheinen und dessen Schatten sich bewegen, wenn du nicht hinsiehst. Jeder Raum birgt ein Geheimnis – und vielleicht etwas, das dich beobachtet. Mit jedem Klick öffnest du knarrende Türen, sammelst seltsame Artefakte und setzt Hinweise zusammen, doch die Dunkelheit arbeitet gegen dich. Stimmen aus der Ferne, rätselhafte Gestalten und verstörende Begegnungen mit den Bewohnern des Schlosses lassen dich an deinem Verstand zweifeln. Und irgendwo in den endlosen Gängen lauert der Graf… geduldig, lauernd, immer näher kommend. Ein falscher Schritt, ein Moment zu lange gezögert – und du spürst seinen Atem im Nacken, bevor dich die Finsternis verschlingt und dich zurückwirft. Nur wer stark genug ist, den Schrecken zu widerstehen und das dunkle Geheimnis zu lüften, hat eine Chance, diesem Albtraum zu entkommen.</p></div>
+        <div id="howToInfo"><img src="img/box.jpg" alt="Box">
+            <p id="info">In Schloss der Finsternis erwachst du allein in einem kalten, verlassenen Gemäuer, dessen Wände
+                zu flüstern scheinen und dessen Schatten sich bewegen, wenn du nicht hinsiehst. Jeder Raum birgt ein
+                Geheimnis – und vielleicht etwas, das dich beobachtet. Mit jedem Klick öffnest du knarrende Türen,
+                sammelst seltsame Artefakte und setzt Hinweise zusammen, doch die Dunkelheit arbeitet gegen dich.
+                Stimmen aus der Ferne, rätselhafte Gestalten und verstörende Begegnungen mit den Bewohnern des Schlosses
+                lassen dich an deinem Verstand zweifeln. Und irgendwo in den endlosen Gängen lauert der Graf… geduldig,
+                lauernd, immer näher kommend. Ein falscher Schritt, ein Moment zu lange gezögert – und du spürst seinen
+                Atem im Nacken, bevor dich die Finsternis verschlingt und dich zurückwirft. Nur wer stark genug ist, den
+                Schrecken zu widerstehen und das dunkle Geheimnis zu lüften, hat eine Chance, diesem Albtraum zu
+                entkommen.</p>
+        </div>
         <img class="back" onclick="lp()" src="img/back.png" alt="back" id="lpButton">
     </div>
+
+    <div id="level1" style="display: none;">
+        <div class="description">
+            <h2>Level 1 – Das Erwachen</h2>
+            <p>Du erwachst in einem kalten, schwach beleuchteten Raum, ohne zu wissen, wie du hierhergekommen bist. Die
+                Luft ist schwer, und aus den dunklen Ecken scheinen dich unsichtbare Augen zu beobachten. Dieses erste
+                Level dient dazu, dich mit den Mechaniken des Schlosses vertraut zu machen – doch unterschätze es nicht.
+                Einfache Rätsel, versteckte Hinweise und erste Begegnungen mit seltsamen Gestalten fordern deinen
+                Verstand heraus. Die Schritte des Grafen sind hier noch fern, doch manchmal glaubst du, ein leises
+                Flüstern oder ein entferntes Knarren hinter dir zu hören. Mit mehreren Hinweisen und häufigen
+                Checkpoints hast du noch eine gewisse Sicherheit – aber das Gefühl, nicht allein zu sein, begleitet dich
+                von Anfang an.</p>
+        </div>
+        <img src="img/rStart.jpg" onclick="goIn1()" alt="Betrete das Schloss" class="lpButton">
+    </div>
+
+    <div id="level2" style="display: none;">
+        <div class="description">
+            <h2>Level 2 – Die Schattenkorridore</h2>
+            <p>Nachdem du das erste Zimmer überstanden hast, führen dich die Gänge tiefer in das Schloss. Die Schatten
+                werden länger, die Türen knarren unheilvoll, und die Geräusche verstärken das Gefühl, dass dich jemand
+                beobachtet. Rätsel werden komplexer und erfordern kombinatorisches Denken und Aufmerksamkeit für
+                Details. Die NPCs, denen du begegnest, geben Hinweise, doch nicht alle sind vertrauenswürdig – manche
+                versuchen, dich in die Irre zu führen. Der Graf ist jetzt unberechenbarer: Er taucht plötzlich auf, wenn
+                du Fehler machst oder zu lange zögerst. Checkpoints und Hinweise sind seltener, sodass jeder Schritt
+                wohlüberlegt sein muss, um nicht ins Dunkel zurückgeworfen zu werden.</p>
+        </div>
+        <img src="img/rStart.jpg" onclick="goIn2()" alt="Betrete das Schloss" class="lpButton">
+    </div>
+
+    <div id="level3" style="display: none;">
+        <div class="description">
+            <h2>Level 3 – Das Herz der Finsternis</h2>
+            <p>Du bist tief im Schloss angekommen, in Bereichen, die von Dunkelheit und Bedrohung durchdrungen sind. Die
+                Rätsel sind knifflig und erfordern volle Konzentration und Mut, während die Atmosphäre dich in den
+                Wahnsinn zu treiben scheint. Der Graf ist ständig präsent, seine Schritte hallen durch die Gänge, und
+                jede falsche Entscheidung kann dich zurückwerfen. NPCs sind kaum noch zu finden, Hinweise extrem rar.
+                Hier entscheidet sich, ob du das Geheimnis des Schlosses wirklich lüften und entkommen kannst. Jeder
+                Schatten, jedes Geräusch kann dein letzter Fehler sein – nur wer Ruhe bewahrt, logisch denkt und den Mut
+                nicht verliert, überlebt den Herzschlag der Finsternis.</p>
+        </div>
+        <img src="img/rStart.jpg" onclick="goIn3()" alt="Betrete das Schloss" class="lpButton">
+    </div>
+
+    <div id="level3" style="display: none;"></div>
+
+    <div id="rLevel1"></div>
 </body>
 
 </html>
