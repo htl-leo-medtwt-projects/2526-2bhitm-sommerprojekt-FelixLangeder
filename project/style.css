@@ -1,7 +1,14 @@
+@font-face {
+    font-family: irish;
+    src: url(font/IrishGrover-Regular.ttf) format("truetype");
+}
+
 body {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    font-family: irish;
+    color: white;
 }
 
 /*Startseite*/
@@ -38,11 +45,56 @@ nav img {
     transform: scale(110%);
 }
 
+.lpButton {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+}
+
+.lpButton:hover {
+    transform: scale(110%);
+}
+
+#lCheckpoint {
+    position: absolute;
+    margin: auto;
+    top: 80vh;
+    left: 40vw;
+    width: 20vw;
+}
+
+#levelChoice {
+    display: grid;
+    grid-template-columns: repeat(3, 3333.3333333%);
+    margin: auto;
+}
+
+#levelChoice img {
+    width: 60%;
+    margin: auto;
+}
+
+#levels {
+    background: url('./img/levels-bg.webp') fixed no-repeat;
+    background-size: cover;
+    background-position: top;
+    width: 100vw;
+    height: 100vh;
+}
+
 /*Leaderboard*/
-#leaderboad {
+#leaderboard {
     background: url('./img/bg-leaderboard.webp') fixed no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top;
+    width: 100vw;
+    height: 100vh;
+}
+
+#leaderboardLevels {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 33.3333333%);
 }
 
 .back {
@@ -50,4 +102,45 @@ nav img {
     bottom: 4rem;
     left: 4rem;
     width: 15%;
+}
+
+.leaderboardImg {
+    width: 60%;
+    margin: auto;
+    margin-top: 30vh;
+}
+
+/*How To*/
+#howTo {
+    background: url('./img/how-to-bg.webp') fixed no-repeat;
+    background-size: cover;
+    background-position: top;
+    width: 100vw;
+    height: 100vh;
+}
+
+#howToInfo {
+    /*background: url('./img/box.jpg') fixed no-repeat;
+    background-position: top;
+    background-position: center;
+    width: 20vw;
+    height: 10vh;*/
+    text-align: center;
+}
+
+#howToInfo img {
+    margin: auto;
+    width: 80vw;
+    position: absolute;
+    left: 10vw;
+    top: 30vh;
+}
+
+#howToInfo p {
+    position: absolute;
+    left: 12.5vw;
+    top: 31vh;
+    font-size: 1.7vw;
+    width: 75vw;
+    color: rgb(255, 130, 108);
 }
