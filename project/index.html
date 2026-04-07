@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,21 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
+
 <body>
-    <nav>
-        <img src="img/leaderboard.png" alt="leaderboard">
-        <img src="img/start-button.png" alt="start">
-        <img src="img/how-to.png" alt="how-to">
-    </nav>
+    <div id="lp">
+        <nav id="nav">
+            <img id="lpButton" onclick="leaderboard()" src="img/leaderboard.png" alt="leaderboard">
+            <img id="lpButton" onclick="startGame()" src="img/start-button.png" alt="start">
+            <img id="lpButton" onclick="howTo()" src="img/how-to.png" alt="how-to">
+        </nav>
+    </div>
+
+    <div style="display: none;" id="leaderboard">
+        <img class="back" onclick="lp()" src="img/back.png" alt="back" id="lpButton">
+    </div>
+
+    <div id="howTo" style="display: none;"></div>
 </body>
+
 </html>

@@ -1,18 +1,53 @@
 body {
-    background: url('./img/startscreen.webp') fixed;
-    /*background-size: cover;*/
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/*Startseite*/
+#lp {
+    background: url('./img/startscreen.webp') fixed no-repeat;
+    background-size: cover;
     background-position: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 nav {
+    position: absolute;
+    top: 70vh;
+    left: 0vw;
     display: grid;
     grid-template-columns: repeat(3, 33.3333333%);
     margin: auto;
-    margin-top: 65vh;
 }
 
 nav img {
     width: 75%;
     margin: auto;
     user-select: none;
+}
+
+#lpButton {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+}
+
+#lpButton:hover {
+    transform: scale(110%);
+}
+
+/*Leaderboard*/
+#leaderboad {
+    background: url('./img/bg-leaderboard.webp') fixed no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.back {
+    position: absolute;
+    bottom: 4rem;
+    left: 4rem;
+    width: 15%;
 }
