@@ -149,7 +149,7 @@ nav img {
 /*Level 1 */
 #level1, #level2, #level3 {
     text-align: center;
-    font-size: 260%;
+    font-size: 180%;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/bg.webp') fixed no-repeat;
     background-size: cover;
     background-position: top;
