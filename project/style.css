@@ -174,3 +174,21 @@ nav img {
     width: 100vw;
     height: 100vh;
 }
+
+.toBlack {
+    animation: toBlack 0.3s ease-in-out 1;
+}
+
+.fromBlack {
+    animation: toBlack 0.3s ease-in-out 1 reverse;
+}
+
+@keyframes toBlack {
+    0%{
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
