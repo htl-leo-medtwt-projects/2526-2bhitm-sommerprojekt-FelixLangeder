@@ -58,7 +58,7 @@ nav img {
 #lCheckpoint {
     position: absolute;
     margin: auto;
-    top: 80vh;
+    top: 75vh;
     left: 40vw;
     width: 20vw;
 }
@@ -140,7 +140,7 @@ nav img {
 #howToInfo p {
     position: absolute;
     left: 12.5vw;
-    top: 31vh;
+    top: 30vh;
     font-size: 1.7vw;
     width: 75vw;
     color: white;

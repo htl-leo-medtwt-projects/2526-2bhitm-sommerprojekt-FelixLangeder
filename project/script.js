@@ -1,7 +1,9 @@
 function leaderboard() {
-    document.getElementById('lp').style.display = "none"
-    document.getElementById('leaderboard').style.display = "block"
     blackScreen()
+    setTimeout(() => {
+        document.getElementById('lp').style.display = "none"
+        document.getElementById('leaderboard').style.display = "block"
+    }, 500)
 }
 
 function lp() {
@@ -53,14 +55,19 @@ function goIn3() {
     //TODO
 }
 
-async function blackScreen() {
+function blackScreen() {
     document.getElementById('blackBox').style.display = "block"
     document.getElementById('blackBox').classList.remove('fromBlack')
     document.getElementById('blackBox').classList.add('toBlack')
-    await setTimeout(() => {}, 1)
-    document.getElementById('blackBox').classList.remove('toBlack')
-    document.getElementById('blackBox').classList.add('fromBlack')
-    document.getElementById('blackBox').style.display = "none"
+    setTimeout(() => {
+        document.getElementById('blackBox').classList.remove('toBlack')
+        document.getElementById('blackBox').classList.add('fromBlack')
+        setTimeout(() => {
+            document.getElementById('blackBox').style.display = "none"
+        }, 500)
+    }, 500)
 }
 
-blackScreen()
+setTimeout(() => {
+    document.getElementById('blackBox').style.display = "none"
+}, 500)
