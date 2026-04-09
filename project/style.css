@@ -176,19 +176,29 @@ nav img {
 }
 
 .toBlack {
-    animation: toBlack 0.3s ease-in-out 1;
+    animation: toBlack 0.5s ease-in-out 1 reverse;
 }
 
 .fromBlack {
-    animation: toBlack 0.3s ease-in-out 1 reverse;
+    animation: toBlack 0.5s ease-in-out 1;
 }
 
 @keyframes toBlack {
     0%{
-        opacity: 1;
+        background: black;
     }
 
     100% {
-        opacity: 0;
+        background: rgba(0, 0, 0, 0);
     }
+}
+
+#blackBox {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0);
+    z-index: 1000000;
+    position: absolute;
+    top: 0;
+    left: 0;
 }

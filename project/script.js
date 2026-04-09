@@ -1,6 +1,7 @@
 function leaderboard() {
     document.getElementById('lp').style.display = "none"
     document.getElementById('leaderboard').style.display = "block"
+    blackScreen()
 }
 
 function lp() {
@@ -51,3 +52,15 @@ function goIn2() {
 function goIn3() {
     //TODO
 }
+
+async function blackScreen() {
+    document.getElementById('blackBox').style.display = "block"
+    document.getElementById('blackBox').classList.remove('fromBlack')
+    document.getElementById('blackBox').classList.add('toBlack')
+    await setTimeout(() => {}, 1)
+    document.getElementById('blackBox').classList.remove('toBlack')
+    document.getElementById('blackBox').classList.add('fromBlack')
+    document.getElementById('blackBox').style.display = "none"
+}
+
+blackScreen()
