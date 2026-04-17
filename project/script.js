@@ -1,5 +1,9 @@
 let playerName = ""
 
+function setPlayerName(name) {
+    playerName = name
+}
+
 function leaderboard() {
     blackScreen()
     setTimeout(() => {
