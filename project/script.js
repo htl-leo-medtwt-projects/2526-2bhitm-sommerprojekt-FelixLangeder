@@ -1,7 +1,13 @@
 let playerName = ""
 
 function setPlayerName(name) {
-    playerName = name
+    if (name != "") {
+        playerName = name
+        return true
+    } else {
+        document.getElementById('nameInput').placeholder = "zuerst Namen eingeben"
+        return false
+    }
 }
 
 function leaderboard() {
@@ -43,31 +49,42 @@ function howTo() {
 }
 
 function startLv1() {
-    blackScreen()
+    if (setPlayerName(document.getElementById('nameInput').value) == false){
+        
+    } else {
+        blackScreen()
     setTimeout(() => {
         lightScreen()
         document.getElementById('levels').style.display = "none"
         document.getElementById('level1').style.display = "block"
     }, 500)
-
+    }
 }
 
 function startLv2() {
-    blackScreen()
+    if (setPlayerName(document.getElementById('nameInput').value) == false){
+        
+    } else {
+        blackScreen()
     setTimeout(() => {
         lightScreen()
         document.getElementById('levels').style.display = "none"
         document.getElementById('level2').style.display = "block"
     }, 500)
+    }
 }
 
 function startLv3() {
-    blackScreen()
+    if (setPlayerName(document.getElementById('nameInput').value) == false){
+        
+    } else {
+        blackScreen()
     setTimeout(() => {
         lightScreen()
         document.getElementById('levels').style.display = "none"
         document.getElementById('level3').style.display = "block"
     }, 500)
+    }
 }
 
 function loadCheckpoint() {
