@@ -49,41 +49,41 @@ function howTo() {
 }
 
 function startLv1() {
-    if (setPlayerName(document.getElementById('nameInput').value) == false){
-        
+    if (setPlayerName(document.getElementById('nameInput').value) == false) {
+
     } else {
         blackScreen()
-    setTimeout(() => {
-        lightScreen()
-        document.getElementById('levels').style.display = "none"
-        document.getElementById('level1').style.display = "block"
-    }, 500)
+        setTimeout(() => {
+            lightScreen()
+            document.getElementById('levels').style.display = "none"
+            document.getElementById('level1').style.display = "block"
+        }, 500)
     }
 }
 
 function startLv2() {
-    if (setPlayerName(document.getElementById('nameInput').value) == false){
-        
+    if (setPlayerName(document.getElementById('nameInput').value) == false) {
+
     } else {
         blackScreen()
-    setTimeout(() => {
-        lightScreen()
-        document.getElementById('levels').style.display = "none"
-        document.getElementById('level2').style.display = "block"
-    }, 500)
+        setTimeout(() => {
+            lightScreen()
+            document.getElementById('levels').style.display = "none"
+            document.getElementById('level2').style.display = "block"
+        }, 500)
     }
 }
 
 function startLv3() {
-    if (setPlayerName(document.getElementById('nameInput').value) == false){
-        
+    if (setPlayerName(document.getElementById('nameInput').value) == false) {
+
     } else {
         blackScreen()
-    setTimeout(() => {
-        lightScreen()
-        document.getElementById('levels').style.display = "none"
-        document.getElementById('level3').style.display = "block"
-    }, 500)
+        setTimeout(() => {
+            lightScreen()
+            document.getElementById('levels').style.display = "none"
+            document.getElementById('level3').style.display = "block"
+        }, 500)
     }
 }
 
@@ -91,13 +91,49 @@ function loadCheckpoint() {
     //TODO
 }
 
+//Level 1
+let data1 = [
+    {
+        background: "img/halle.jpg",
+        box: [
+            88, 65, 12, 8
+        ]
+    }
+]
+
 function goIn1() {
     blackScreen()
     setTimeout(() => {
         lightScreen()
         document.getElementById('level1').style.display = "none"
         document.getElementById('rLevel1').style.display = "block"
+        document.getElementById('rLevel1').style.backgroundImage = "url('./img/halle.jpg')"
     }, 500)
+}
+
+let counter = 1
+function onext() {
+    if (counter == 1) {
+        document.getElementById('rLevel1').style.backgroundImage = "url('./img/1.floor.webp')"
+        document.getElementById('click1').style.left = "45vw"
+        document.getElementById('click1').style.top = "30vh"
+        document.getElementById('click1').style.height = "50vh"
+
+        document.getElementById('click2').style.left = "45vw"
+        document.getElementById('click2').style.top = "30vh"
+        document.getElementById('click2').style.height = "50vh"
+        document.getElementById('click2').style.width = "50vw"
+        counter++
+    } else if (counter == 2) {
+        document.getElementById('rLevel1').style.backgroundImage = "url('./img/1.floor.webp')"
+    }
+}
+
+let counter2 = 1
+function o2next() {
+    if (counter2 == 1) {
+
+    }
 }
 
 function goIn2() {
@@ -112,7 +148,6 @@ function blackScreen() {
     document.getElementById('blackBox').style.display = "block"
     document.getElementById('blackBox').classList.remove('fromBlack')
     document.getElementById('blackBox').classList.add('toBlack')
-    console.log('rage bait 2')
 }
 
 function lightScreen() {

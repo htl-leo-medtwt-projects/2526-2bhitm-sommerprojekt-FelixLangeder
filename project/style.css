@@ -14,6 +14,10 @@ body {
 input::placeholder {
     color: white;
 }
+
+.hover:hover {
+    cursor: pointer;
+}
 /*Startseite*/
 #nameInput {
     font-family: irish;
@@ -166,13 +170,13 @@ nav img {
 }
 
 /*Level 1 */
-.clickbox {
+.clickBox {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10vh;
+    left: 40vw;
     background-color: rgb(0, 0, 0);
-    width: 5vw;
-    height: 5vh;
+    width: 15vw;
+    height: 40vh;
 }
 
 #level1, #level2, #level3 {
@@ -196,7 +200,8 @@ nav img {
 }
 
 #rLevel1 {
-    background: url('./img/halle.jpg') fixed no-repeat;
+    background-image: url('./img/halle.jpg');
+    background: fixed no-repeat;
     background-size: cover;
     background-position: top;
     width: 100vw;
