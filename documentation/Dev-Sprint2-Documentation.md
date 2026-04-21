@@ -6,10 +6,11 @@
 
 - Name input + Meldung, wenn nichts eingegeben wurde, hinzugefügt
 - Loadingscreen gefixed und überall eingebunden
-- Level 1 fast fertig
+- Level 1 2/3 fertig
 
 ## Ziele bis zum nächsten Sprint
 
 - Level 1 abschließen
 - Level 2 anfangen
 - Leaderboard mit Logik für Level 1
+- Typed.js für Texte einbinden

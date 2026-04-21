@@ -174,9 +174,18 @@ nav img {
     position: absolute;
     top: 10vh;
     left: 40vw;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     width: 15vw;
     height: 40vh;
+}
+
+#backBox {
+    position: absolute;
+    top: 90vh;
+    left: 30vw;
+    background-color: rgba(114, 49, 49, 0);
+    width: 40vw;
+    height: 10vh;
 }
 
 #level1, #level2, #level3 {
