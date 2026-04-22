@@ -104,13 +104,22 @@ let data1 = [
     }
 ]
 
+let doc = {
+    level1: document.getElementById('level1'),
+    rLevel1: document.getElementById('rLevel1'),
+    click1: document.getElementById('click1'),
+    click2: document.getElementById('click2'),
+    backBox: document.getElementById('backBox'),
+    hebel: document.getElementById('hebel')
+}
+
 function goIn1() {
     blackScreen()
     setTimeout(() => {
         lightScreen()
-        document.getElementById('level1').style.display = "none"
-        document.getElementById('rLevel1').style.display = "block"
-        document.getElementById('rLevel1').style.backgroundImage = "url('./img/halle.jpg')"
+        doc.level1.style.display = "none"
+        doc.rLevel1.style.display = "block"
+        doc.rLevel1.style.backgroundImage = "url('./img/halle.jpg')"
     }, 500)
 }
 
@@ -130,44 +139,44 @@ function backBox() {
 
 function onext() {
     if (counter == 0) {
-        document.getElementById('rLevel1').style.backgroundImage = "url('./img/halle.jpg')"
-        document.getElementById('click2').style.display = "none"
-        document.getElementById('backBox').style.display = "none"
-        document.getElementById('click1').style.top = "10vh"
-        document.getElementById('click1').style.left = "40vw"
-        document.getElementById('click1').style.width = "15vw"
-        document.getElementById('click1').style.height = "40vh"
+        doc.rLevel1.style.backgroundImage = "url('./img/halle.jpg')"
+        doc.click2.style.display = "none"
+        doc.backBox.style.display = "none"
+        doc.click1.style.top = "10vh"
+        doc.click1.style.left = "40vw"
+        doc.click1.style.width = "15vw"
+        doc.click1.style.height = "40vh"
     } else if (counter == 1) {
-        document.getElementById('backBox').style.display = "block"
-        document.getElementById('rLevel1').style.backgroundImage = "url('./img/1.floor.webp')"
-        document.getElementById('click1').style.display = "block"
-        document.getElementById('click1').style.left = "45vw"
-        document.getElementById('click1').style.top = "30vh"
-        document.getElementById('click1').style.height = "50vh"
+        doc.backBox.style.display = "block"
+        doc.rLevel1.style.backgroundImage = "url('./img/1.floor.webp')"
+        doc.click1.style.display = "block"
+        doc.click1.style.left = "45vw"
+        doc.click1.style.top = "30vh"
+        doc.click1.style.height = "50vh"
 
-        document.getElementById('click2').style.display = "block"
-        document.getElementById('click2').style.left = "38vw"
-        document.getElementById('click2').style.top = "30vh"
-        document.getElementById('click2').style.height = "50vh"
-        document.getElementById('click2').style.width = "5vw"
+        doc.click2.style.display = "block"
+        doc.click2.style.left = "38vw"
+        doc.click2.style.top = "30vh"
+        doc.click2.style.height = "50vh"
+        doc.click2.style.width = "5vw"
     } else if (counter == 2) {
-        document.getElementById('rLevel1').style.backgroundImage = "url('./img/1.1.png')"
-        document.getElementById('click1').style.display = "none"
-        document.getElementById('click2').style.display = "none"
+        doc.rLevel1.style.backgroundImage = "url('./img/1.1.png')"
+        doc.click1.style.display = "none"
+        doc.click2.style.display = "none"
     } else if (counter == 3) {
-        document.getElementById('rLevel1').style.backgroundImage = "url('./img/1.1.png')"
+        doc.rLevel1.style.backgroundImage = "url('./img/1.1.png')"
     }
     counter++
 }
 
 function o2next() {
     if (counter2 == 1) {
-        document.getElementById('click1').style.display = "none"
-        document.getElementById('click2').style.display = "none"
+        doc.click1.style.display = "none"
+        doc.click2.style.display = "none"
         if (hebel == false) {
-            document.getElementById('rLevel1').style.backgroundImage = "url('./img/türC.png')"
+            doc.rLevel1.style.backgroundImage = "url('./img/türC.png')"
         } else {
-            document.getElementById('rLevel1').style.backgroundImage = "url('./img/türO.png')"
+            doc.rLevel1.style.backgroundImage = "url('./img/türO.png')"
         }
     }
     counter2++
