@@ -54,6 +54,10 @@ function startLv1() {
     } else {
         blackScreen()
         setTimeout(() => {
+            /*const typed = new Typed('#info', {
+                strings: [`<i></i>`],
+                typeSpeed: 50,
+            });*/
             lightScreen()
             document.getElementById('levels').style.display = "none"
             document.getElementById('level1').style.display = "block"

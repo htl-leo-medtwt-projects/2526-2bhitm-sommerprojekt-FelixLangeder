@@ -18,6 +18,10 @@ input::placeholder {
 .hover:hover {
     cursor: pointer;
 }
+
+.infoL {
+    text-align: left;
+}
 /*Startseite*/
 #nameInput {
     font-family: irish;

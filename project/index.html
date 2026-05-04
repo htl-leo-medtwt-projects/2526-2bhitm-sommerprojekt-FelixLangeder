@@ -27,8 +27,9 @@
             <img class="lpButton" onclick="startLv2()" src="img/lv2s.jpg" alt="Level2">
             <img class="lpButton" onclick="startLv3()" src="img/lv3s.jpg" alt="Level3">
         </div>
-        <img id="lCheckpoint" class="lpButton" onclick="loadCheckpoint(), setPlayerName(document.getElementById('nameInput').value)" src="img/lastCheckp.png"
-            alt="load Checkpoint">
+        <img id="lCheckpoint" class="lpButton"
+            onclick="loadCheckpoint(), setPlayerName(document.getElementById('nameInput').value)"
+            src="img/lastCheckp.png" alt="load Checkpoint">
     </div>
 
     <div style="display: none;" id="leaderboard">
@@ -59,17 +60,27 @@
     <div id="level1" style="display: none;">
         <div class="description">
             <h2>Level 1 – Das Erwachen</h2>
-            <p>Du erwachst in einem kalten, schwach beleuchteten Raum, ohne zu wissen, wie du hierhergekommen bist. Die
+            <p class="infoL" id="info1"></p>
+        </div>
+        <img src="img/rStart.jpg" onclick="goIn1()" alt="Betrete das Schloss" class="lpButton">
+    </div>
+
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#info1', {
+            strings: [`<i>Du erwachst in einem kalten, schwach beleuchteten Raum, ohne zu wissen, wie du hierhergekommen bist. Die
                 Luft ist schwer, und aus den dunklen Ecken scheinen dich unsichtbare Augen zu beobachten. Dieses erste
                 Level dient dazu, dich mit den Mechaniken des Schlosses vertraut zu machen – doch unterschätze es nicht.
                 Einfache Rätsel, versteckte Hinweise und erste Begegnungen mit seltsamen Gestalten fordern deinen
                 Verstand heraus. Die Schritte des Grafen sind hier noch fern, doch manchmal glaubst du, ein leises
                 Flüstern oder ein entferntes Knarren hinter dir zu hören. Mit mehreren Hinweisen und häufigen
                 Checkpoints hast du noch eine gewisse Sicherheit – aber das Gefühl, nicht allein zu sein, begleitet dich
-                von Anfang an.</p>
-        </div>
-        <img src="img/rStart.jpg" onclick="goIn1()" alt="Betrete das Schloss" class="lpButton">
-    </div>
+                von Anfang an.</i>.`],
+            typeSpeed: 50,
+        });
+    </script>
 
     <div id="level2" style="display: none;">
         <div class="description">
@@ -112,4 +123,5 @@
 
     <div id="blackBox" class="fromBlack" style="display: block;"></div>
 </body>
+
 </html>
