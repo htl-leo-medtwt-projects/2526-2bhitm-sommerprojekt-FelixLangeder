@@ -190,6 +190,23 @@ nav img {
     background-color: rgba(114, 49, 49, 0);
     width: 40vw;
     height: 10vh;
+    animation: backBox 1s ease-in-out infinite;
+    margin-bottom: 2rem;
+    user-select: none;
+}
+
+@keyframes backBox {
+    0% {
+        transform: translate(0rem);
+    }
+
+    50% {
+        transform: translateY(-0.5rem);
+    }
+
+    100% {
+        transform: translate(0rem);
+    }
 }
 
 #level1, #level2, #level3 {

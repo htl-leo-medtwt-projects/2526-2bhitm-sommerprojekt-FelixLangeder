@@ -151,7 +151,7 @@ function onext() {
         doc.click1.style.width = "15vw"
         doc.click1.style.height = "40vh"
     } else if (counter == 1) {
-        doc.backBox.style.display = "block"
+        doc.backBox.style.display = "flex"
         doc.rLevel1.style.backgroundImage = "url('./img/1.floor.webp')"
         doc.click1.style.display = "block"
         doc.click1.style.left = "45vw"
