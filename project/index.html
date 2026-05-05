@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
     <link rel="icon" href="img/icon.jpg">
 </head>
 
@@ -44,7 +45,39 @@
 
     <div id="howTo" style="display: none;">
         <div id="howToInfo"><img src="img/box.jpg" alt="Box">
-            <p id="info">In Schloss der Finsternis erwachst du allein in einem kalten, verlassenen Gemäuer, dessen Wände
+            <p id="info"></p>
+        </div>
+        <img class="back" onclick="lp()" src="img/back.png" alt="back" id="lpButton">
+    </div>
+
+    <div id="level1" style="display: none;">
+        <div class="description">
+            <h2>Level 1 - Das Erwachen</h2>
+            <p class="infoL" id="info1"></p>
+        </div>
+        <img src="img/rStart.jpg" onclick="goIn1()" alt="Betrete das Schloss" class="lpButton">
+    </div>
+
+    <div id="level2" style="display: none;">
+        <div class="description">
+            <h2>Level 2 - Die Schattenkorridore</h2>
+            <p id="info2"></p>
+        </div>
+        <img src="img/rStart.jpg" onclick="goIn2()" alt="Betrete das Schloss" class="lpButton">
+    </div>
+
+    <div id="level3" style="display: none;">
+        <div class="description">
+            <h2>Level 3 - Das Herz der Finsternis</h2>
+            <p id="info3"></p>
+        </div>
+        <img src="img/rStart.jpg" onclick="goIn3()" alt="Betrete das Schloss" class="lpButton">
+    </div>
+
+    <script>
+        function typeHowTo() {
+            const typed = new Typed('#info', {
+                strings: [`<i>In Schloss der Finsternis erwachst du allein in einem kalten, verlassenen Gemäuer, dessen Wände
                 zu flüstern scheinen und dessen Schatten sich bewegen, wenn du nicht hinsiehst. Jeder Raum birgt ein
                 Geheimnis – und vielleicht etwas, das dich beobachtet. Mit jedem Klick öffnest du knarrende Türen,
                 sammelst seltsame Artefakte und setzt Hinweise zusammen, doch die Dunkelheit arbeitet gegen dich.
@@ -53,53 +86,52 @@
                 lauernd, immer näher kommend. Ein falscher Schritt, ein Moment zu lange gezögert – und du spürst seinen
                 Atem im Nacken, bevor dich die Finsternis verschlingt und dich zurückwirft. Nur wer stark genug ist, den
                 Schrecken zu widerstehen und das dunkle Geheimnis zu lüften, hat eine Chance, diesem Albtraum zu
-                entkommen.</p>
-        </div>
-        <img class="back" onclick="lp()" src="img/back.png" alt="back" id="lpButton">
-    </div>
+                entkommen.</i>`],
+                typeSpeed: 20,
+            });
+        }
 
-    <div id="level1" style="display: none;">
-        <div class="description">
-            <h2>Level 1 – Das Erwachen</h2>
-            <p class="infoL" id="info1"></p>
-        </div>
-        <img src="img/rStart.jpg" onclick="goIn1()" alt="Betrete das Schloss" class="lpButton">
-    </div>
+        function type1() {
+            const typed = new Typed('#info1', {
+                strings: [`<i>Du erwachst in einem kalten, schwach beleuchteten Raum, ohne zu wissen, wie du hierhergekommen bist. Die Luft ist schwer, und aus den dunklen Ecken scheinen dich unsichtbare Augen zu beobachten. Dieses erste Level dient dazu, dich mit den Mechaniken des Schlosses vertraut zu machen – doch unterschätze es nicht. Einfache Rätsel, versteckte Hinweise und erste Begegnungen mit seltsamen Gestalten fordern deinen Verstand heraus. Die Schritte des Grafen sind hier noch fern, doch manchmal glaubst du, ein leises Flüstern oder ein entferntes Knarren hinter dir zu hören. Mit mehreren Hinweisen und häufigen Checkpoints hast du noch eine gewisse Sicherheit – aber das Gefühl, nicht allein zu sein, begleitet dich von Anfang an.</i>`],
+                typeSpeed: 20,
+            });
+        }
 
-    <div id="level2" style="display: none;">
-        <div class="description">
-            <h2>Level 2 – Die Schattenkorridore</h2>
-            <p>Nachdem du das erste Zimmer überstanden hast, führen dich die Gänge tiefer in das Schloss. Die Schatten
-                werden länger, die Türen knarren unheilvoll, und die Geräusche verstärken das Gefühl, dass dich jemand
+        function type2() {
+            const typed = new Typed('#info2', {
+                strings: [`<i>Nachdem du das erste Zimmer überstanden hast, führen dich die Gänge tiefer in das Schloss. Die
+                Schatten werden länger, die Türen knarren unheilvoll, und die Geräusche verstärken das Gefühl, dass dich jemand
                 beobachtet. Rätsel werden komplexer und erfordern kombinatorisches Denken und Aufmerksamkeit für
-                Details. Die NPCs, denen du begegnest, geben Hinweise, doch nicht alle sind vertrauenswürdig – manche
+                Details. Die NPCs, denen du begegnest, geben Hinweise, doch nicht alle sind vertrauenswürdig - manche
                 versuchen, dich in die Irre zu führen. Der Graf ist jetzt unberechenbarer: Er taucht plötzlich auf, wenn
                 du Fehler machst oder zu lange zögerst. Checkpoints und Hinweise sind seltener, sodass jeder Schritt
-                wohlüberlegt sein muss, um nicht ins Dunkel zurückgeworfen zu werden.</p>
-        </div>
-        <img src="img/rStart.jpg" onclick="goIn2()" alt="Betrete das Schloss" class="lpButton">
-    </div>
+                wohlüberlegt sein muss, um nicht ins Dunkel zurückgeworfen zu werden.</i>`],
+                typeSpeed: 20,
+            });
+        }
 
-    <div id="level3" style="display: none;">
-        <div class="description">
-            <h2>Level 3 – Das Herz der Finsternis</h2>
-            <p>Du bist tief im Schloss angekommen, in Bereichen, die von Dunkelheit und Bedrohung durchdrungen sind. Die
+        function type3() {
+            const typed = new Typed('#info3', {
+                strings: [`<i>Du bist tief im Schloss angekommen, in Bereichen, die von Dunkelheit und Bedrohung durchdrungen sind. Die
                 Rätsel sind knifflig und erfordern volle Konzentration und Mut, während die Atmosphäre dich in den
                 Wahnsinn zu treiben scheint. Der Graf ist ständig präsent, seine Schritte hallen durch die Gänge, und
                 jede falsche Entscheidung kann dich zurückwerfen. NPCs sind kaum noch zu finden, Hinweise extrem rar.
                 Hier entscheidet sich, ob du das Geheimnis des Schlosses wirklich lüften und entkommen kannst. Jeder
-                Schatten, jedes Geräusch kann dein letzter Fehler sein – nur wer Ruhe bewahrt, logisch denkt und den Mut
-                nicht verliert, überlebt den Herzschlag der Finsternis.</p>
-        </div>
-        <img src="img/rStart.jpg" onclick="goIn3()" alt="Betrete das Schloss" class="lpButton">
-    </div>
+                Schatten, jedes Geräusch kann dein letzter Fehler sein - nur wer Ruhe bewahrt, logisch denkt und den Mut
+                nicht verliert, überlebt den Herzschlag der Finsternis.</i>`],
+                typeSpeed: 20,
+            });
+        }
+    </script>
 
     <div style="display: none;" id="rLevel1">
         <img src="img/hebel.png" id="hebel" style="display: none;" alt="Hebel">
         <div class="clickBox hover" onclick="onext()" id="click1"></div>
         <div class="clickBox hover" onclick="o2next()" style="display: none;" id="click2"></div>
         <div class="hover" id="backBox" onclick="backBox()" style="display: none; justify-content: center;">
-            <img src="img/arrow.png" alt="Pfeil" style="transform: rotate(270deg); margin: auto; width: 3rem; position: relative; top: 2vh;">
+            <img src="img/arrow.png" alt="Pfeil"
+                style="transform: rotate(270deg); margin: auto; width: 3rem; position: relative; top: 2vh;">
         </div>
     </div>
     <div style="display: none;" id="rLevel2"></div>

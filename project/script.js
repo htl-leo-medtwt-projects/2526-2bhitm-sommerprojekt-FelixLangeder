@@ -62,6 +62,7 @@ function howTo() {
         lightScreen()
         doc.lp.style.display = "none"
         doc.howTo.style.display = "block"
+        typeHowTo()
     }, 500)
 }
 
@@ -71,14 +72,10 @@ function startLv1() {
     } else {
         blackScreen()
         setTimeout(() => {
-            /*const typed = new Typed('#info', {
-                strings: [`<i></i>`],
-                typeSpeed: 50,
-            });*/
             lightScreen()
             doc.levels.style.display = "none"
             doc.level1.style.display = "block"
-            doc.script1.innerHTML = "<script>var typed=new Typed('#info1',{strings:[`<i>Du erwachst in einem kalten, schwach beleuchteten Raum, ohne zu wissen, wie du hierhergekommen bist. Die Luft ist schwer, und aus den dunklen Ecken scheinen dich unsichtbare Augen zu beobachten. Dieses erste Level dient dazu, dich mit den Mechaniken des Schlosses vertraut zu machen – doch unterschätze es nicht. Einfache Rätsel, versteckte Hinweise und erste Begegnungen mit seltsamen Gestalten fordern deinen Verstand heraus. Die Schritte des Grafen sind hier noch fern, doch manchmal glaubst du, ein leises Flüstern oder ein entferntes Knarren hinter dir zu hören. Mit mehreren Hinweisen und häufigen Checkpoints hast du noch eine gewisse Sicherheit – aber das Gefühl, nicht allein zu sein, begleitet dich von Anfang an.</i>.`],typeSpeed:50});</script>"
+            type1()
         }, 500)
     }
 }
@@ -92,6 +89,7 @@ function startLv2() {
             lightScreen()
             doc.levels.style.display = "none"
             document.getElementById('level2').style.display = "block"
+            type2()
         }, 500)
     }
 }
@@ -105,6 +103,7 @@ function startLv3() {
             lightScreen()
             doc.levels.style.display = "none"
             document.getElementById('level3').style.display = "block"
+            type3()
         }, 500)
     }
 }
