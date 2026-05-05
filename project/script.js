@@ -15,6 +15,7 @@ let doc = {
 }
 
 let playerName = ""
+let timer = 0
 
 function setPlayerName(name) {
     if (name != "") {
@@ -221,3 +222,22 @@ function lightScreen() {
 setTimeout(() => {
     doc.blackBox.style.display = "none"
 }, 500)
+
+//Local-Storage
+function saveLevelResult(levelName, playerName, timer) {
+    const STORAGE_KEY = "levelResults";
+    let data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+
+    if (!data[levelName]) {
+        data[levelName] = [];
+    }
+
+    data[levelName].push({
+        name: playerName,
+        time: timer
+    });
+
+    data[levelName].sort((a, b) => a.time - b.time);
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
