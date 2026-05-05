@@ -1,4 +1,10 @@
 let doc = {
+    nameInput: document.getElementById('nameInput'),
+    lp: document.getElementById('lp'),
+    leaderboard: document.getElementById('leaderboard'),
+    howTo: document.getElementById('howTo'),
+    levels: document.getElementById('levels'),
+    blackBox: document.getElementById('blackBox'),
     level1: document.getElementById('level1'),
     rLevel1: document.getElementById('rLevel1'),
     click1: document.getElementById('click1'),
@@ -15,7 +21,7 @@ function setPlayerName(name) {
         playerName = name
         return true
     } else {
-        document.getElementById('nameInput').placeholder = "zuerst Namen eingeben"
+        doc.nameInput.placeholder = "zuerst Namen eingeben"
         return false
     }
 }
@@ -24,8 +30,8 @@ function leaderboard() {
     blackScreen()
     setTimeout(() => {
         lightScreen()
-        document.getElementById('lp').style.display = "none"
-        document.getElementById('leaderboard').style.display = "block"
+        doc.lp.style.display = "none"
+        doc.leaderboard.style.display = "block"
     }, 500)
 }
 
@@ -33,10 +39,10 @@ function lp() {
     blackScreen()
     setTimeout(() => {
         lightScreen()
-        document.getElementById('lp').style.display = "grid"
-        document.getElementById('leaderboard').style.display = "none"
-        document.getElementById('howTo').style.display = "none"
-        document.getElementById('levels').style.display = "none"
+        doc.lp.style.display = "grid"
+        doc.leaderboard.style.display = "none"
+        doc.howTo.style.display = "none"
+        doc.levels.style.display = "none"
     }, 500)
 }
 
@@ -44,8 +50,8 @@ function startGame() {
     blackScreen()
     setTimeout(() => {
         lightScreen()
-        document.getElementById('lp').style.display = "none"
-        document.getElementById('levels').style.display = "block"
+        doc.lp.style.display = "none"
+        doc.levels.style.display = "block"
     }, 500)
 }
 
@@ -53,13 +59,13 @@ function howTo() {
     blackScreen()
     setTimeout(() => {
         lightScreen()
-        document.getElementById('lp').style.display = "none"
-        document.getElementById('howTo').style.display = "block"
+        doc.lp.style.display = "none"
+        doc.howTo.style.display = "block"
     }, 500)
 }
 
 function startLv1() {
-    if (setPlayerName(document.getElementById('nameInput').value) == false) {
+    if (setPlayerName(doc.nameInput.value) == false) {
 
     } else {
         blackScreen()
@@ -69,21 +75,21 @@ function startLv1() {
                 typeSpeed: 50,
             });*/
             lightScreen()
-            document.getElementById('levels').style.display = "none"
-            document.getElementById('level1').style.display = "block"
+            doc.levels.style.display = "none"
+            doc.level1.style.display = "block"
             doc.script1.innerHTML = "<script>var typed=new Typed('#info1',{strings:[`<i>Du erwachst in einem kalten, schwach beleuchteten Raum, ohne zu wissen, wie du hierhergekommen bist. Die Luft ist schwer, und aus den dunklen Ecken scheinen dich unsichtbare Augen zu beobachten. Dieses erste Level dient dazu, dich mit den Mechaniken des Schlosses vertraut zu machen – doch unterschätze es nicht. Einfache Rätsel, versteckte Hinweise und erste Begegnungen mit seltsamen Gestalten fordern deinen Verstand heraus. Die Schritte des Grafen sind hier noch fern, doch manchmal glaubst du, ein leises Flüstern oder ein entferntes Knarren hinter dir zu hören. Mit mehreren Hinweisen und häufigen Checkpoints hast du noch eine gewisse Sicherheit – aber das Gefühl, nicht allein zu sein, begleitet dich von Anfang an.</i>.`],typeSpeed:50});</script>"
         }, 500)
     }
 }
 
 function startLv2() {
-    if (setPlayerName(document.getElementById('nameInput').value) == false) {
+    if (setPlayerName(doc.nameInput.value) == false) {
 
     } else {
         blackScreen()
         setTimeout(() => {
             lightScreen()
-            document.getElementById('levels').style.display = "none"
+            doc.levels.style.display = "none"
             document.getElementById('level2').style.display = "block"
         }, 500)
     }
@@ -96,7 +102,7 @@ function startLv3() {
         blackScreen()
         setTimeout(() => {
             lightScreen()
-            document.getElementById('levels').style.display = "none"
+            doc.levels.style.display = "none"
             document.getElementById('level3').style.display = "block"
         }, 500)
     }
@@ -201,17 +207,17 @@ function goIn3() {
 }
 
 function blackScreen() {
-    document.getElementById('blackBox').style.display = "block"
-    document.getElementById('blackBox').classList.remove('fromBlack')
-    document.getElementById('blackBox').classList.add('toBlack')
+    doc.blackBox.style.display = "block"
+    doc.blackBox.classList.remove('fromBlack')
+    doc.blackBox.classList.add('toBlack')
 }
 
 function lightScreen() {
-    document.getElementById('blackBox').classList.remove('toBlack')
-    document.getElementById('blackBox').classList.add('fromBlack')
-    document.getElementById('blackBox').style.display = "none"
+    doc.blackBox.classList.remove('toBlack')
+    doc.blackBox.classList.add('fromBlack')
+    doc.blackBox.style.display = "none"
 }
 
 setTimeout(() => {
-    document.getElementById('blackBox').style.display = "none"
+    doc.blackBox.style.display = "none"
 }, 500)
