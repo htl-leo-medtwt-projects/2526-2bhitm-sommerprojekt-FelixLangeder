@@ -11,7 +11,8 @@ let doc = {
     click2: document.getElementById('click2'),
     backBox: document.getElementById('backBox'),
     hebel: document.getElementById('hebel'),
-    script1: document.getElementById('script1')
+    script1: document.getElementById('script1'),
+    endscreen1: document.getElementById('endscreen1')
 }
 
 let playerName = ""
@@ -179,8 +180,15 @@ function onext() {
         doc.click1.style.display = "none"
         doc.click2.style.display = "none"
     } else if (counter == 3) {
-        doc.hebel.style.display = "none"
-        doc.rLevel1.style.backgroundImage = "url('./img/1.1.png')"
+        doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmer.jpeg')"
+        doc.backBox.style.display = "none"
+    } else if (counter == 4) {
+        doc.rLevel1.style.backgroundImage = "url('./img/tor.jpg')"
+        doc.endscreen1.style.display = "block"
+        doc.click1.style.left = "300vw"
+        doc.click1.style.top = "30vh"
+        doc.click1.style.width = "40vw"
+        doc.click1.style.height = "40vh"
     }
     counter++
 }
@@ -192,7 +200,10 @@ function o2next() {
         if (hebel == false) {
             doc.rLevel1.style.backgroundImage = "url('./img/türC.png')"
         } else {
+            doc.click1.style.display = "block"
+            doc.click1.style.left = "47vw"
             doc.rLevel1.style.backgroundImage = "url('./img/türO.png')"
+            counter++
         }
     }
     counter2++
