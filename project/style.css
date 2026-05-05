@@ -265,3 +265,10 @@ nav img {
     top: 0;
     left: 0;
 }
+
+#hebel {
+    position: absolute;
+    top: 10vh;
+    left: 45vw;
+    width: 8vw;
+}

@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "typed.js": "^3.0.0"
   }

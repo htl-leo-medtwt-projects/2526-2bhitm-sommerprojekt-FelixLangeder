@@ -1,3 +1,13 @@
+let doc = {
+    level1: document.getElementById('level1'),
+    rLevel1: document.getElementById('rLevel1'),
+    click1: document.getElementById('click1'),
+    click2: document.getElementById('click2'),
+    backBox: document.getElementById('backBox'),
+    hebel: document.getElementById('hebel'),
+    script1: document.getElementById('script1')
+}
+
 let playerName = ""
 
 function setPlayerName(name) {
@@ -61,6 +71,7 @@ function startLv1() {
             lightScreen()
             document.getElementById('levels').style.display = "none"
             document.getElementById('level1').style.display = "block"
+            doc.script1.innerHTML = "<script>var typed=new Typed('#info1',{strings:[`<i>Du erwachst in einem kalten, schwach beleuchteten Raum, ohne zu wissen, wie du hierhergekommen bist. Die Luft ist schwer, und aus den dunklen Ecken scheinen dich unsichtbare Augen zu beobachten. Dieses erste Level dient dazu, dich mit den Mechaniken des Schlosses vertraut zu machen – doch unterschätze es nicht. Einfache Rätsel, versteckte Hinweise und erste Begegnungen mit seltsamen Gestalten fordern deinen Verstand heraus. Die Schritte des Grafen sind hier noch fern, doch manchmal glaubst du, ein leises Flüstern oder ein entferntes Knarren hinter dir zu hören. Mit mehreren Hinweisen und häufigen Checkpoints hast du noch eine gewisse Sicherheit – aber das Gefühl, nicht allein zu sein, begleitet dich von Anfang an.</i>.`],typeSpeed:50});</script>"
         }, 500)
     }
 }
@@ -108,15 +119,6 @@ let data1 = [
     }
 ]
 
-let doc = {
-    level1: document.getElementById('level1'),
-    rLevel1: document.getElementById('rLevel1'),
-    click1: document.getElementById('click1'),
-    click2: document.getElementById('click2'),
-    backBox: document.getElementById('backBox'),
-    hebel: document.getElementById('hebel')
-}
-
 function goIn1() {
     blackScreen()
     setTimeout(() => {
@@ -163,11 +165,15 @@ function onext() {
         doc.click2.style.top = "30vh"
         doc.click2.style.height = "50vh"
         doc.click2.style.width = "5vw"
+
+        doc.hebel.style.display = "none"
     } else if (counter == 2) {
         doc.rLevel1.style.backgroundImage = "url('./img/1.1.png')"
+        doc.hebel.style.display = "block"
         doc.click1.style.display = "none"
         doc.click2.style.display = "none"
     } else if (counter == 3) {
+        doc.hebel.style.display = "none"
         doc.rLevel1.style.backgroundImage = "url('./img/1.1.png')"
     }
     counter++
