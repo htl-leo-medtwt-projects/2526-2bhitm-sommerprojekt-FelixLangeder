@@ -32,11 +32,12 @@ input::placeholder {
     font-size: 200%;
     color: white;
     border: solid black 0rem;
-    width: 13vw;
+    width: 12.5vw;
     position: relative;
     top: 30vh;
     left: 41.5vw;
     transform: scale(120%);
+    height: 1.7rem;
 }
 
 #lp {
