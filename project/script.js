@@ -198,6 +198,22 @@ function o2next() {
     counter2++
 }
 
+function changeHebel() {
+    if (hebel) {
+        hebel = false
+        doc.hebel.style.animation = "hebel 0.5s ease-in-out 1 reverse"
+        setTimeout(() => {
+            doc.hebel.style = "display: block; transform: rotate(0deg);"
+        }, 450)
+    } else {
+        hebel = true
+        doc.hebel.style.animation = "hebel 0.5s ease-in-out 1"
+        setTimeout(() => {
+            doc.hebel.style = "display: block; transform: rotate(180deg);"
+        }, 450)
+    }
+}
+
 function goIn2() {
     //TODO
 }

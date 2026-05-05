@@ -5,9 +5,10 @@
 ## Neuerungen/Änderungen
 
 - Level 1 abgeschlossen
-- Leaderboard mit Logik für Level 1 implementiert
+- Leaderboard-Logik implementiert
 - Pfeil + Animation beim Zurückgehen angezeigt
-- Typed.js für Texte eingebunden
+- Typed.js für Texte voll funktionsfähig eingebunden
+- Inputfeldgröße angepasst
 
 ## Ziele bis zum nächsten Sprint
 

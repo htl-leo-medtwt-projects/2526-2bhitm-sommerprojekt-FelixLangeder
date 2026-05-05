@@ -1,6 +1,12 @@
 {
+  "name": "sommerprojekt_langeder",
+  "version": "1.0.0",
+  "description": "Integriere in diesen Bereich deine gesamte praktische Projektstruktur!\r Jeglicher Fremdcode (z. B. Codepen, ChatGPT und CO.) ist als solcher im Projekt zu kennzeichnen.\r Ergänze sprechende Kommentare in deinem Code zur Strukturierung + Erläuterung!",
+  "license": "ISC",
+  "author": "Felix Langeder",
   "type": "module",
-  "dependencies": {
-    "typed.js": "^3.0.0"
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

@@ -267,8 +267,46 @@ nav img {
 }
 
 #hebel {
+    display: none;
     position: absolute;
-    top: 10vh;
-    left: 45vw;
-    width: 8vw;
+    top: 33vh;
+    left: 36vw;
+    width: 5vw;
+    cursor: pointer;
+}
+
+.hebel {
+    animation: hebel 0.5s ease-in-out 1;
+}
+
+.hebelReverse {
+    animation: hebelReverse 0.5s ease-in-out 1 reverse;
+}
+
+@keyframes hebel {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes hebelReverse {
+    0% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
