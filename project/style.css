@@ -185,13 +185,12 @@ nav img {
 
 #backBox {
     position: absolute;
-    top: 90vh;
+    top: 87vh;
     left: 30vw;
     background-color: rgba(114, 49, 49, 0);
     width: 40vw;
-    height: 10vh;
+    height: 13vh;
     animation: backBox 1s ease-in-out infinite;
-    margin-bottom: 2rem;
     user-select: none;
 }
 
