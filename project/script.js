@@ -190,15 +190,11 @@ function onext() {
         doc.click1.style.height = "20vh"
     } else if (counter == 4) {
         doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmerO.jpg')"
-    }
-
-    else if (counter == 5) {
+    } else if (counter == 5) {
         doc.rLevel1.style.backgroundImage = "url('./img/tor.jpg')"
         doc.endscreen1.style.display = "block"
-        doc.click1.style.left = "300vw"
-        doc.click1.style.top = "30vh"
-        doc.click1.style.width = "40vw"
-        doc.click1.style.height = "40vh"
+        clearInterval(interval)
+        saveLevelResult("1", playerName, timer)
     }
     counter++
 }
