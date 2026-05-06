@@ -126,6 +126,7 @@ let data1 = [
     }
 ]
 
+let interval
 function goIn1() {
     blackScreen()
     setTimeout(() => {
@@ -133,6 +134,7 @@ function goIn1() {
         doc.level1.style.display = "none"
         doc.rLevel1.style.display = "block"
         doc.rLevel1.style.backgroundImage = "url('./img/halle.jpg')"
+        interval = setInterval(oneSecondMore, 1000)
     }, 500)
 }
 
@@ -193,7 +195,10 @@ function onext() {
     else if (counter == 5) {
         doc.rLevel1.style.backgroundImage = "url('./img/tor.jpg')"
         doc.endscreen1.style.display = "block"
-        doc.click1.style.display = "none"
+        doc.click1.style.left = "300vw"
+        doc.click1.style.top = "30vh"
+        doc.click1.style.width = "40vw"
+        doc.click1.style.height = "40vh"
     }
     counter++
 }
@@ -271,4 +276,8 @@ function saveLevelResult(levelName, playerName, timer) {
     data[levelName].sort((a, b) => a.time - b.time);
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function oneSecondMore() {
+    timer++
 }
