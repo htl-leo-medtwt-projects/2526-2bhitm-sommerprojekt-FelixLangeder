@@ -180,15 +180,20 @@ function onext() {
         doc.click1.style.display = "none"
         doc.click2.style.display = "none"
     } else if (counter == 3) {
-        doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmer.jpeg')"
+        doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmer.jpg')"
         doc.backBox.style.display = "none"
+        doc.click1.style.left = "42.5vw"
+        doc.click1.style.top = "60vh"
+        doc.click1.style.width = "15vw"
+        doc.click1.style.height = "20vh"
     } else if (counter == 4) {
+        doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmerO.jpg')"
+    }
+
+    else if (counter == 5) {
         doc.rLevel1.style.backgroundImage = "url('./img/tor.jpg')"
         doc.endscreen1.style.display = "block"
-        doc.click1.style.left = "300vw"
-        doc.click1.style.top = "30vh"
-        doc.click1.style.width = "40vw"
-        doc.click1.style.height = "40vh"
+        doc.click1.style.display = "none"
     }
     counter++
 }
