@@ -13,5 +13,5 @@
 ## Ziele bis zum nächsten Sprint
 
 - Level 2 abschließen
-- Leaderboard-Logik für Level 2
+- Leaderboard zeigt Spieler an
 - erstes Sounddesign

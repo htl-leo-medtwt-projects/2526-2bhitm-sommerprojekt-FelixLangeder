@@ -191,8 +191,11 @@ nav img {
     background-color: rgba(114, 49, 49, 0);
     width: 40vw;
     height: 13vh;
-    animation: backBox 1s ease-in-out infinite;
     user-select: none;
+}
+
+#backBox:hover {
+    animation: backBox 1s ease-in-out infinite;
 }
 
 @keyframes backBox {
