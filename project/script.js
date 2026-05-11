@@ -285,6 +285,7 @@ function bgMusic() {
     if (bgmusicBool) {
         bgmusic = new Audio('audio/bg.mp3').play()
         bgmusicBool = false
+        bgmusic.loop = true
     }
 }
 
