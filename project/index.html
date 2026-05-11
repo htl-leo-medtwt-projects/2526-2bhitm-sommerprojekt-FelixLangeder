@@ -12,26 +12,26 @@
     <link rel="icon" href="img/icon.jpg">
 </head>
 
-<body>
+<body onclick="bgMusic()">
 
     <div id="lp">
         <nav id="nav">
-            <img id="lpButton" onclick="leaderboard()" src="img/leaderboard.png" alt="leaderboard">
-            <img id="lpButton" onclick="startGame()" src="img/start-button.png" alt="start">
-            <img id="lpButton" onclick="howTo()" src="img/how-to.png" alt="how-to">
+            <img id="lpButton" onclick="leaderboard(), windSound()" src="img/leaderboard.png" alt="leaderboard">
+            <img id="lpButton" onclick="startGame(), windSound()" src="img/start-button.png" alt="start">
+            <img id="lpButton" onclick="howTo(), windSound()" src="img/how-to.png" alt="how-to">
         </nav>
     </div>
 
     <div id="levels" style="display: none;">
-        <img class="back" onclick="lp()" src="img/back.png" alt="back" id="lpButton">
+        <img class="back" onclick="lp(), windSound()" src="img/back.png" alt="back" id="lpButton">
         <input type="text" placeholder="Wie heißt du?" id="nameInput">
         <div id="levelChoice">
-            <img class="lpButton" onclick="startLv1()" src="img/lv1s.jpg" alt="Level1">
-            <img class="lpButton" onclick="startLv2()" src="img/lv2s.jpg" alt="Level2">
-            <img class="lpButton" onclick="startLv3()" src="img/lv3s.jpg" alt="Level3">
+            <img class="lpButton" onclick="startLv1(), windSound()" src="img/lv1s.jpg" alt="Level1">
+            <img class="lpButton" onclick="startLv2(), windSound()" src="img/lv2s.jpg" alt="Level2">
+            <img class="lpButton" onclick="startLv3(), windSound()" src="img/lv3s.jpg" alt="Level3">
         </div>
         <img id="lCheckpoint" class="lpButton"
-            onclick="loadCheckpoint(), setPlayerName(document.getElementById('nameInput').value)"
+            onclick="loadCheckpoint(), windSound(), setPlayerName(document.getElementById('nameInput').value)"
             src="img/lastCheckp.png" alt="load Checkpoint">
     </div>
 
@@ -41,14 +41,14 @@
             <img src="img/lv2.jpg" alt="Level2" class="leaderboardImg">
             <img src="img/lv3.jpg" alt="Level3" class="leaderboardImg">
         </div>
-        <img class="back" onclick="lp()" src="img/back.png" alt="back" id="lpButton">
+        <img class="back" onclick="lp(), windSound()" src="img/back.png" alt="back" id="lpButton">
     </div>
 
     <div id="howTo" style="display: none;">
         <div id="howToInfo"><img src="img/box.jpg" alt="Box">
             <p id="info"></p>
         </div>
-        <img class="back" onclick="lp()" src="img/back.png" alt="back" id="lpButton">
+        <img class="back" onclick="lp(), windSound()" src="img/back.png" alt="back" id="lpButton">
     </div>
 
     <div id="level1" style="display: none;">
@@ -56,7 +56,7 @@
             <h2>Level 1 - Das Erwachen</h2>
             <p class="infoL" id="info1"></p>
         </div>
-        <img src="img/rStart.jpg" onclick="goIn1()" alt="Betrete das Schloss" class="lpButton">
+        <img src="img/rStart.jpg" onclick="goIn1(), windSound()" alt="Betrete das Schloss" class="lpButton">
     </div>
 
     <div id="level2" style="display: none;">
@@ -64,7 +64,7 @@
             <h2>Level 2 - Die Schattenkorridore</h2>
             <p id="info2"></p>
         </div>
-        <img src="img/rStart.jpg" onclick="goIn2()" alt="Betrete das Schloss" class="lpButton">
+        <img src="img/rStart.jpg" onclick="goIn2(), windSound()" alt="Betrete das Schloss" class="lpButton">
     </div>
 
     <div id="level3" style="display: none;">
@@ -72,7 +72,7 @@
             <h2>Level 3 - Das Herz der Finsternis</h2>
             <p id="info3"></p>
         </div>
-        <img src="img/rStart.jpg" onclick="goIn3()" alt="Betrete das Schloss" class="lpButton">
+        <img src="img/rStart.jpg" onclick="goIn3(), windSound()" alt="Betrete das Schloss" class="lpButton">
     </div>
 
     <script>

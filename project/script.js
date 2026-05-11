@@ -277,3 +277,18 @@ function saveLevelResult(levelName, playerName, timer) {
 function oneSecondMore() {
     timer++
 }
+
+//Sounddesign
+let bgmusic
+let bgmusicBool = true
+function bgMusic() {
+    if (bgmusicBool) {
+        bgmusic = new Audio('audio/bg.mp3').play()
+        bgmusicBool = false
+    }
+}
+
+let wind
+function windSound() {
+    wind = new Audio('audio/wind.mp3').play()
+}
