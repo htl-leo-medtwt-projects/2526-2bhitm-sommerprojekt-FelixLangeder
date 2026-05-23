@@ -12,7 +12,8 @@ let doc = {
     backBox: document.getElementById('backBox'),
     hebel: document.getElementById('hebel'),
     script1: document.getElementById('script1'),
-    endscreen1: document.getElementById('endscreen1')
+    endscreen1: document.getElementById('endscreen1'),
+    tipBox: document.getElementById('tipBox')
 }
 
 let playerName = ""
@@ -161,6 +162,8 @@ function onext() {
         doc.click1.style.left = "40vw"
         doc.click1.style.width = "15vw"
         doc.click1.style.height = "40vh"
+        doc.tipBox.style.display = "block"
+        type('Willkommen im Schloss! Sieh dich mal um!')
     } else if (counter == 1) {
         doc.backBox.style.display = "flex"
         doc.rLevel1.style.backgroundImage = "url('./img/1.floor.webp')"
@@ -174,13 +177,13 @@ function onext() {
         doc.click2.style.top = "30vh"
         doc.click2.style.height = "50vh"
         doc.click2.style.width = "5vw"
-
         doc.hebel.style.display = "none"
     } else if (counter == 2) {
         doc.rLevel1.style.backgroundImage = "url('./img/1.1.png')"
         doc.hebel.style.display = "block"
         doc.click1.style.display = "none"
         doc.click2.style.display = "none"
+        type('Hier könnte etwas nützliches sein!')
     } else if (counter == 3) {
         doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmer.jpg')"
         doc.backBox.style.display = "none"
@@ -188,10 +191,13 @@ function onext() {
         doc.click1.style.top = "60vh"
         doc.click1.style.width = "15vw"
         doc.click1.style.height = "20vh"
+        type('Jetzt bist du im Arbeitszimmer. Irgendwo hier muss sich ein geheimer Ausgang befinden!')
     } else if (counter == 4) {
         doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmerO.jpg')"
+        type('Du hast ihn gefunden!')
     } else if (counter == 5) {
         doc.rLevel1.style.backgroundImage = "url('./img/tor.jpg')"
+        doc.tipBox.style.display = "none"
         doc.endscreen1.style.display = "block"
         clearInterval(interval)
         saveLevelResult("1", playerName, timer)
@@ -205,11 +211,13 @@ function o2next() {
         doc.click2.style.display = "none"
         if (hebel == false) {
             doc.rLevel1.style.backgroundImage = "url('./img/türC.png')"
+            type('Die Tür ist zu. Irgendwie muss man sie doch öffnen können!')
         } else {
             doc.click1.style.display = "block"
             doc.click1.style.left = "47vw"
             doc.rLevel1.style.backgroundImage = "url('./img/türO.png')"
             counter++
+            type('Die Tür ist offen!')
         }
     }
     counter2++

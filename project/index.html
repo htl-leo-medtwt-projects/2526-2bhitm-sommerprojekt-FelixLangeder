@@ -80,11 +80,11 @@
             const typed = new Typed('#info', {
                 strings: [`<i>In Schloss der Finsternis erwachst du allein in einem kalten, verlassenen Gemäuer, dessen Wände
                 zu flüstern scheinen und dessen Schatten sich bewegen, wenn du nicht hinsiehst. Jeder Raum birgt ein
-                Geheimnis – und vielleicht etwas, das dich beobachtet. Mit jedem Klick öffnest du knarrende Türen,
+                Geheimnis - und vielleicht etwas, das dich beobachtet. Mit jedem Klick öffnest du knarrende Türen,
                 sammelst seltsame Artefakte und setzt Hinweise zusammen, doch die Dunkelheit arbeitet gegen dich.
                 Stimmen aus der Ferne, rätselhafte Gestalten und verstörende Begegnungen mit den Bewohnern des Schlosses
                 lassen dich an deinem Verstand zweifeln. Und irgendwo in den endlosen Gängen lauert der Graf… geduldig,
-                lauernd, immer näher kommend. Ein falscher Schritt, ein Moment zu lange gezögert – und du spürst seinen
+                lauernd, immer näher kommend. Ein falscher Schritt, ein Moment zu lange gezögert - und du spürst seinen
                 Atem im Nacken, bevor dich die Finsternis verschlingt und dich zurückwirft. Nur wer stark genug ist, den
                 Schrecken zu widerstehen und das dunkle Geheimnis zu lüften, hat eine Chance, diesem Albtraum zu
                 entkommen.</i>`],
@@ -124,6 +124,13 @@
                 typeSpeed: 20,
             });
         }
+
+        function type(string) {
+            const typed = new Typed('#tipBox', {
+                strings: [`<i>${string}</i>`],
+                typeSpeed: 20,
+            });
+        }
     </script>
 
     <div style="display: none;" id="rLevel1">
@@ -134,6 +141,7 @@
             <img src="img/arrow.png" alt="Pfeil"
                 style="transform: rotate(270deg); margin: auto; width: 3rem; position: relative; top: 2vh;">
         </div>
+        <div id="tipBox">Hier ist der Tipp</div>
         <div id="endscreen1" style="display: none;">
             <h1>Herzlichen Glückwunsch</h1>
             <p>Du bist aus dem Schloss entkommen</p>

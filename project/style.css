@@ -22,6 +22,7 @@ input::placeholder {
 .infoL {
     text-align: left;
 }
+
 /*Startseite*/
 #nameInput {
     font-family: irish;
@@ -192,6 +193,7 @@ nav img {
     width: 40vw;
     height: 13vh;
     user-select: none;
+    z-index: 100;
 }
 
 #backBox:hover {
@@ -212,7 +214,9 @@ nav img {
     }
 }
 
-#level1, #level2, #level3 {
+#level1,
+#level2,
+#level3 {
     text-align: center;
     font-size: 180%;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/bg.webp') fixed no-repeat;
@@ -222,7 +226,9 @@ nav img {
     height: 100vh;
 }
 
-#level1 img, #level2 img, #level3 img {
+#level1 img,
+#level2 img,
+#level3 img {
     width: 30%;
 }
 
@@ -250,7 +256,7 @@ nav img {
 }
 
 @keyframes toBlack {
-    0%{
+    0% {
         background: black;
     }
 
@@ -326,4 +332,16 @@ nav img {
 #endscreen1 img {
     width: 30vw;
     margin: auto;
+}
+
+#tipBox {
+    width: 100vw;
+    height: 8vh;
+    background: #000000;
+    background: linear-gradient(0deg,rgba(0, 0, 0, 0.97) 0%, rgba(0, 0, 0, 0.97) 50%, rgba(0, 0, 0, 0) 100%);
+    position: absolute;
+    bottom: 0vh;
+    padding: 10% 0% 0 10%;
+    font-size: 250%;
+    z-index: 1;
 }
