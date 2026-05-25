@@ -21,6 +21,7 @@ let doc = {
 
     // LEVEL 2
     rLevel2: document.getElementById('rLevel2'),
+    level2: document.getElementById('level2'),
 
     grafScreen2: document.getElementById('grafScreen2'),
     grafImg2: document.getElementById('grafImg2'),
@@ -296,6 +297,7 @@ function goIn2() {
 
         lightScreen()
 
+        doc.level2.style.display = "none"
         doc.rLevel2.style.display = "block"
 
         room2 = 0
