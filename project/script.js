@@ -1,10 +1,14 @@
 let doc = {
+
+    // START
     nameInput: document.getElementById('nameInput'),
     lp: document.getElementById('lp'),
     leaderboard: document.getElementById('leaderboard'),
     howTo: document.getElementById('howTo'),
     levels: document.getElementById('levels'),
     blackBox: document.getElementById('blackBox'),
+
+    // LEVEL 1
     level1: document.getElementById('level1'),
     rLevel1: document.getElementById('rLevel1'),
     click1: document.getElementById('click1'),
@@ -13,7 +17,26 @@ let doc = {
     hebel: document.getElementById('hebel'),
     script1: document.getElementById('script1'),
     endscreen1: document.getElementById('endscreen1'),
-    tipBox: document.getElementById('tipBox')
+    tipBox: document.getElementById('tipBox'),
+
+    // LEVEL 2
+    rLevel2: document.getElementById('rLevel2'),
+
+    grafScreen2: document.getElementById('grafScreen2'),
+    grafImg2: document.getElementById('grafImg2'),
+
+    codePanel2: document.getElementById('codePanel2'),
+    codeInput2: document.getElementById('codeInput2'),
+
+    clickL2_1: document.getElementById('clickL2_1'),
+    clickL2_2: document.getElementById('clickL2_2'),
+
+    backBox2: document.getElementById('backBox2'),
+
+    tipBox2: document.getElementById('tipBox2'),
+
+    endscreen2: document.getElementById('endscreen2')
+
 }
 
 let playerName = ""
@@ -239,14 +262,6 @@ function changeHebel() {
     }
 }
 
-function goIn2() {
-    //TODO
-}
-
-function goIn3() {
-    //TODO
-}
-
 function blackScreen() {
     doc.blackBox.style.display = "block"
     doc.blackBox.classList.remove('fromBlack')
@@ -262,6 +277,239 @@ function lightScreen() {
 setTimeout(() => {
     doc.blackBox.style.display = "none"
 }, 500)
+
+//Level 2
+
+let room2 = 0
+let wrongCode2 = 0
+let dangerTimer2 = 0
+
+let secretCode2 = "3814"
+
+let grafInterval2
+
+function goIn2() {
+
+    blackScreen()
+
+    setTimeout(() => {
+
+        lightScreen()
+
+        doc.rLevel2.style.display = "block"
+
+        room2 = 0
+
+        level2Next()
+
+        grafInterval2 = setInterval(() => {
+
+            dangerTimer2++
+
+            if (dangerTimer2 >= 90) {
+                grafAttack2()
+            }
+
+        }, 1000)
+
+    }, 500)
+}
+
+function level2Next() {
+
+    // HAUPTHALLE
+    if (room2 == 0) {
+
+        doc.rLevel2.style.backgroundImage =
+            "url('./img/level2_hall.jpg')"
+
+        doc.clickL2_1.style.display = "block"
+
+        doc.clickL2_1.style.left = "20vw"
+        doc.clickL2_1.style.top = "20vh"
+        doc.clickL2_1.style.width = "20vw"
+        doc.clickL2_1.style.height = "50vh"
+
+        doc.clickL2_2.style.display = "block"
+
+        doc.clickL2_2.style.left = "60vw"
+        doc.clickL2_2.style.top = "20vh"
+        doc.clickL2_2.style.width = "20vw"
+        doc.clickL2_2.style.height = "50vh"
+
+        type("Der zweite Stock wirkt bewohnt.")
+
+    }
+
+    // BIBLIOTHEK
+    else if (room2 == 1) {
+
+        doc.rLevel2.style.backgroundImage =
+            "url('./img/bibliothek.jpg')"
+
+        doc.backBox2.style.display = "flex"
+
+        doc.clickL2_1.style.left = "48vw"
+        doc.clickL2_1.style.top = "40vh"
+        doc.clickL2_1.style.width = "8vw"
+        doc.clickL2_1.style.height = "25vh"
+
+        doc.clickL2_2.style.display = "none"
+
+        type("Zwischen den Büchern steht eine Zahl eingeritzt: 3")
+
+    }
+
+    // UHRZIMMER
+    else if (room2 == 2) {
+
+        doc.rLevel2.style.backgroundImage =
+            "url('./img/uhrzimmer.jpg')"
+
+        doc.clickL2_1.style.left = "40vw"
+        doc.clickL2_1.style.top = "10vh"
+        doc.clickL2_1.style.width = "20vw"
+        doc.clickL2_1.style.height = "30vh"
+
+        type("Die große Uhr ist bei 8 stehen geblieben.")
+
+    }
+
+    // SCHLAFZIMMER
+    else if (room2 == 3) {
+
+        doc.rLevel2.style.backgroundImage =
+            "url('./img/schlafzimmer.jpg')"
+
+        doc.clickL2_1.style.left = "70vw"
+        doc.clickL2_1.style.top = "30vh"
+        doc.clickL2_1.style.width = "10vw"
+        doc.clickL2_1.style.height = "40vh"
+
+        type("Vier Kerzen brennen noch.")
+
+    }
+
+    // GEHEIMER GANG
+    else if (room2 == 4) {
+
+        doc.rLevel2.style.backgroundImage =
+            "url('./img/geheimgang.jpg')"
+
+        doc.clickL2_1.style.left = "45vw"
+        doc.clickL2_1.style.top = "50vh"
+        doc.clickL2_1.style.width = "15vw"
+        doc.clickL2_1.style.height = "30vh"
+
+        type("Der letzte Blick zeigt die Wahrheit.")
+
+    }
+
+    // CODE TÜR
+    else if (room2 == 5) {
+
+        doc.rLevel2.style.backgroundImage =
+            "url('./img/codeDoor.jpg')"
+
+        doc.clickL2_1.style.display = "none"
+        doc.clickL2_2.style.display = "none"
+
+        doc.codePanel2.style.display = "flex"
+
+        type("Vier Zahlen trennen dich von der Freiheit.")
+
+    }
+
+    room2++
+}
+
+function nextLevel2() {
+
+    if (room2 <= 5) {
+        level2Next()
+    }
+
+}
+
+function nextLevel2Room() {
+
+    room2 = 2
+
+    level2Next()
+
+}
+
+function backLevel2() {
+
+    room2 = 0
+
+    level2Next()
+
+}
+
+function checkCode2() {
+
+    let code = doc.codeInput2.value
+
+    if (code == secretCode2) {
+
+        clearInterval(grafInterval2)
+
+        doc.codePanel2.style.display = "none"
+
+        doc.rLevel2.style.backgroundImage =
+            "url('./img/escape.jpg')"
+
+        type("Die Tür öffnet sich langsam...")
+
+        setTimeout(() => {
+
+            doc.endscreen2.style.display = "block"
+
+        }, 3000)
+
+    } else {
+
+        wrongCode2++
+
+        type("Falscher Code.")
+
+        let audio = new Audio("./sound/error.mp3")
+
+        audio.play()
+
+        if (wrongCode2 >= 3) {
+            grafAttack2()
+        }
+
+    }
+
+}
+
+function grafAttack2() {
+
+    clearInterval(grafInterval2)
+
+    doc.grafScreen2.style.display = "flex"
+
+    doc.rLevel2.style.backgroundImage =
+        "url('./img/red.jpg')"
+
+    let scream = new Audio("./sound/graf.mp3")
+
+    scream.volume = 1
+
+    scream.play()
+
+    type("Der Graf hat dich gefunden.")
+
+    setTimeout(() => {
+
+        location.reload()
+
+    }, 5000)
+
+}
 
 //Local-Storage
 function saveLevelResult(levelName, playerName, timer) {

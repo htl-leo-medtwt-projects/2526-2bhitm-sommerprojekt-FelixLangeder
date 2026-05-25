@@ -148,7 +148,40 @@
             <img src="img/back.jpg" class="lpButton" alt="back-Button" onclick="location.reload()">
         </div>
     </div>
-    <div style="display: none;" id="rLevel2"></div>
+    <div style="display: none;" id="rLevel2">
+
+        <div id="grafScreen2" style="display:none;">
+            <img src="img/graf.png" id="grafImg2" alt="">
+        </div>
+
+        <div id="codePanel2" style="display:none;">
+            <input type="text" maxlength="4" id="codeInput2" placeholder="Code">
+            <button onclick="checkCode2()">Öffnen</button>
+        </div>
+
+        <div class="clickBox hover" onclick="nextLevel2()" id="clickL2_1"></div>
+
+        <div class="clickBox hover" onclick="nextLevel2Room()" style="display:none;" id="clickL2_2"></div>
+
+        <div class="hover" id="backBox2" onclick="backLevel2()" style="display:none; justify-content:center;">
+
+            <img src="img/arrow.png" alt="Pfeil" style="transform: rotate(270deg);
+            margin:auto;
+            width:3rem;
+            position:relative;
+            top:2vh;">
+        </div>
+
+        <div id="tipBox2">Tipp</div>
+
+        <div id="endscreen2" style="display:none;">
+            <h1>Du bist entkommen...</h1>
+            <p>Aber der Graf lebt noch.</p>
+
+            <img src="img/back.jpg" class="lpButton" alt="back-Button" onclick="location.reload()">
+        </div>
+
+    </div>
     <div style="display: none;" id="rLevel3"></div>
 
     <div id="blackBox" class="fromBlack" style="display: block;"></div>
