@@ -355,3 +355,42 @@ nav img {
     width: 100vw;
     height: 100vh;
 }
+
+#codePanel2 {
+    margin: auto;
+    padding: 60vh;
+    width: 40vw;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#codePanel2 input {
+    width: 10vw;
+    height: 5vh;
+    background-color: #462107;
+    color: black;
+    border-radius: 0.2rem;
+    text-align: center;
+    font-family: irish;
+    font-size: 200%;
+    border: solid black 0.2rem;
+}
+
+#codePanel2 input::placeholder {
+    color: black;
+    text-align: center;
+    font-family: irish;
+    font-size: 100%;
+}
+
+#codePanel2 button {
+    width: 10vw;
+    height: 5.5vh;
+    background-color: #462107;
+    color: black;
+    border-radius: 0.2rem;
+    text-align: center;
+    border: solid black 0.2rem;
+    font-family: irish;
+    font-size: 200%;
+}

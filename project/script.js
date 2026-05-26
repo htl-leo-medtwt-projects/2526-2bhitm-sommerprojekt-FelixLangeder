@@ -35,7 +35,7 @@ let doc = {
     clickL2_4: document.getElementById('clickL2_4'),
     clickL2_5: document.getElementById('clickL2_5'),
 
-    backBox2: document.getElementById('backBox2'),
+    backBox2: document.getElementsByClassName('back2')[0],
 
     tipBox2: document.getElementById('tipBox2'),
 
@@ -348,7 +348,7 @@ function level2Next() {
         doc.clickL2_4.style.width = "10vw"
         doc.clickL2_4.style.height = "20vh"
 
-        doc.backBox.style.display = "block"
+        doc.backBox2.style.display = "none"
 
         doc.clickL2_3.style.display = "none"
         doc.clickL2_5.style.display = "none"
@@ -362,7 +362,7 @@ function level2Next() {
         doc.rLevel2.style.backgroundImage =
             "url('./img/bibliothek.jpg')"
 
-        doc.backBox.style.display = "block"
+        doc.backBox2.style.display = "block"
 
         doc.clickL2_3.style.display = "block"
         doc.clickL2_3.style.left = "42.5vw"
@@ -385,6 +385,7 @@ function level2Next() {
         doc.rLevel2.style.backgroundImage =
             "url('./img/uhrzimmer.jpg')"
 
+        doc.backBox2.style.display = "block"
         doc.clickL2_1.style.left = "40vw"
         doc.clickL2_1.style.top = "10vh"
         doc.clickL2_1.style.width = "20vw"
@@ -428,6 +429,7 @@ function level2Next() {
         doc.rLevel2.style.backgroundImage =
             "url('./img/geheimgang.png')"
 
+        doc.backBox2.style.display = "block"
         doc.clickL2_5.style.display = "block"
         doc.clickL2_5.style.left = "45vw"
         doc.clickL2_5.style.top = "40vh"
@@ -512,6 +514,7 @@ function backLevel2() {
         room2 = 4
     }
 
+    doc.codePanel2.style.display = "none"
     level2Next()
 
 }
@@ -526,7 +529,7 @@ function checkCode2() {
 
         doc.codePanel2.style.display = "none"
 
-        doc.backBox.style.display = "none"
+        doc.backBox2.style.display = "none"
         type("Die Tür öffnet sich langsam...")
 
         setTimeout(() => {
@@ -560,6 +563,8 @@ function grafAttack2() {
     clearInterval(grafInterval2)
 
     doc.rLevel2.style.backgroundImage = "url('img/graf.png')"
+    doc.codePanel2.style.display = "none"
+    doc.backBox2.style.display = "none"
 
     let scream = new Audio("./audio/graf.mp3")
 

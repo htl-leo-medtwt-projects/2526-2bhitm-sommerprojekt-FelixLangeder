@@ -14,3 +14,4 @@
 - Überall Sounddesign
 - Leaderboard für alle Level
 - Generelle, kleinere UI/UX Optimierungen
+- Spielstand laden soll funktionieren
