@@ -31,6 +31,7 @@ let doc = {
 
     clickL2_1: document.getElementById('clickL2_1'),
     clickL2_2: document.getElementById('clickL2_2'),
+    clickL2_3: document.getElementById('clickL2_3'),
 
     backBox2: document.getElementById('backBox2'),
 
@@ -101,7 +102,6 @@ function startLv1() {
             lightScreen()
             doc.levels.style.display = "none"
             doc.level1.style.display = "block"
-            doc.tipBox.style.display = "block"
             type1()
         }, 500)
     }
@@ -159,6 +159,7 @@ function goIn1() {
         lightScreen()
         doc.level1.style.display = "none"
         doc.rLevel1.style.display = "block"
+         doc.tipBox.style.display = "block"
         doc.rLevel1.style.backgroundImage = "url('./img/halle.jpg')"
         interval = setInterval(oneSecondMore, 1000)
     }, 500)
@@ -286,7 +287,7 @@ let room2 = 0
 let wrongCode2 = 0
 let dangerTimer2 = 0
 
-let secretCode2 = "3814"
+let secretCode2 = "31121"
 
 let grafInterval2
 
@@ -327,7 +328,7 @@ function level2Next() {
             "url('./img/level2_hall.jpg')"
 
         doc.clickL2_1.style.display = "block"
-
+        doc.tipBox.style.display = "block"
         doc.clickL2_1.style.left = "20vw"
         doc.clickL2_1.style.top = "20vh"
         doc.clickL2_1.style.width = "20vw"
@@ -341,7 +342,6 @@ function level2Next() {
         doc.clickL2_2.style.height = "50vh"
 
         type("Der zweite Stock wirkt bewohnt.")
-
     }
 
     // BIBLIOTHEK
@@ -350,7 +350,7 @@ function level2Next() {
         doc.rLevel2.style.backgroundImage =
             "url('./img/bibliothek.jpg')"
 
-        doc.backBox2.style.display = "flex"
+        doc.backBox.style.display = "block"
 
         doc.clickL2_1.style.left = "48vw"
         doc.clickL2_1.style.top = "40vh"
@@ -359,7 +359,7 @@ function level2Next() {
 
         doc.clickL2_2.style.display = "none"
 
-        type("Zwischen den Büchern steht eine Zahl eingeritzt: 3")
+        type("Irgendwo hier muss sich doch ein Hinweis befinden")
 
     }
 
@@ -374,7 +374,7 @@ function level2Next() {
         doc.clickL2_1.style.width = "20vw"
         doc.clickL2_1.style.height = "30vh"
 
-        type("Die große Uhr ist bei 8 stehen geblieben.")
+        type("Die große Uhr könnte nützlich sein")
 
     }
 
@@ -389,7 +389,7 @@ function level2Next() {
         doc.clickL2_1.style.width = "10vw"
         doc.clickL2_1.style.height = "40vh"
 
-        type("Vier Kerzen brennen noch.")
+        type("Eingeschaltete Lichter? Wozu die wohl dienen")
 
     }
 
@@ -404,7 +404,7 @@ function level2Next() {
         doc.clickL2_1.style.width = "15vw"
         doc.clickL2_1.style.height = "30vh"
 
-        type("Der letzte Blick zeigt die Wahrheit.")
+        type("Der letzte Blick zeigt die Wahrheit")
 
     }
 
@@ -419,7 +419,7 @@ function level2Next() {
 
         doc.codePanel2.style.display = "flex"
 
-        type("Vier Zahlen trennen dich von der Freiheit.")
+        type("Vier Zahlen trennen dich von der Freiheit")
 
     }
 
@@ -448,6 +448,12 @@ function backLevel2() {
 
     level2Next()
 
+}
+
+function bedroom2() {
+    room2 = 3
+
+    level2Next()
 }
 
 function checkCode2() {
@@ -493,12 +499,9 @@ function grafAttack2() {
 
     clearInterval(grafInterval2)
 
-    doc.grafScreen2.style.display = "flex"
+    doc.rLevel2.style.backgroundImage = "url('img/graf.png')"
 
-    doc.rLevel2.style.backgroundImage =
-        "url('./img/red.jpg')"
-
-    let scream = new Audio("./sound/graf.mp3")
+    let scream = new Audio("./audio/graf.mp3")
 
     scream.volume = 1
 

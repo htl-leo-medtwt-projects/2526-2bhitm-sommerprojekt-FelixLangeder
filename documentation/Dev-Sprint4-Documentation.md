@@ -12,3 +12,4 @@
 
 - Level 3 abschließen
 - Überall Sounddesign
+- Generelle, kleinere UI/UX Optimierungen
