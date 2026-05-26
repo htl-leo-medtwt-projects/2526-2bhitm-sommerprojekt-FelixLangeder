@@ -56,7 +56,7 @@
             <h2>Level 1 - Das Erwachen</h2>
             <p class="infoL" id="info1"></p>
         </div>
-        <img src="img/rStart.jpg" onclick="goIn1(), windSound()" alt="Betrete das Schloss" class="lpButton">
+        <img src="img/rStart.jpg" onclick="goIn1(), windSound(), type('Willkommen im Schloss! Sieh dich mal um!')" alt="Betrete das Schloss" class="lpButton">
     </div>
 
     <div id="level2" style="display: none;">
@@ -141,13 +141,14 @@
             <img src="img/arrow.png" alt="Pfeil"
                 style="transform: rotate(270deg); margin: auto; width: 3rem; position: relative; top: 2vh;">
         </div>
-        <div id="tipBox">Hier ist der Tipp</div>
+        <div class="tipBox" id="tipBox"></div>
         <div id="endscreen1" style="display: none;">
             <h1>Herzlichen Glückwunsch</h1>
             <p>Du bist aus dem Schloss entkommen</p>
             <img src="img/back.jpg" class="lpButton" alt="back-Button" onclick="location.reload()">
         </div>
     </div>
+
     <div style="display: none;" id="rLevel2">
 
         <div id="grafScreen2" style="display:none;">
@@ -163,16 +164,16 @@
 
         <div class="clickBox hover" onclick="nextLevel2Room()" style="display:none;" id="clickL2_2"></div>
 
-        <div class="hover" id="backBox2" onclick="backLevel2()" style="display:none; justify-content:center;">
+        <div class="hover" id="backBox" onclick="backLevel2()" style="display:none; justify-content:center;">
 
-            <img src="img/arrow.png" alt="Pfeil" style="transform: rotate(270deg);
+            <img src="img/arrow.png" alt="Pfeil" style="transform: rotate(270deg); display: block;
             margin:auto;
             width:3rem;
             position:relative;
             top:2vh;">
         </div>
 
-        <div id="tipBox2">Tipp</div>
+        <div class="tipBox" id="tipBox"></div>
 
         <div id="endscreen2" style="display:none;">
             <h1>Du bist entkommen...</h1>

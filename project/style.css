@@ -342,6 +342,16 @@ nav img {
     position: absolute;
     bottom: 0vh;
     padding: 10% 0% 0 10%;
-    font-size: 250%;
+    font-size: 200%;
     z-index: 1;
+}
+
+/*Level 2*/
+#rLevel2 {
+    background-image: url('./img/level2_hall.jpg');
+    background: fixed no-repeat;
+    background-size: cover;
+    background-position: top;
+    width: 100vw;
+    height: 100vh;
 }

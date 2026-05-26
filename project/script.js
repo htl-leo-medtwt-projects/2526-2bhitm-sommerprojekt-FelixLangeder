@@ -101,6 +101,7 @@ function startLv1() {
             lightScreen()
             doc.levels.style.display = "none"
             doc.level1.style.display = "block"
+            doc.tipBox.style.display = "block"
             type1()
         }, 500)
     }
