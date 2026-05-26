@@ -12,4 +12,5 @@
 
 - Level 3 abschließen
 - Überall Sounddesign
+- Leaderboard für alle Level
 - Generelle, kleinere UI/UX Optimierungen

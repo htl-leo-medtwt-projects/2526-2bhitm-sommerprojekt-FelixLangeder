@@ -32,6 +32,8 @@ let doc = {
     clickL2_1: document.getElementById('clickL2_1'),
     clickL2_2: document.getElementById('clickL2_2'),
     clickL2_3: document.getElementById('clickL2_3'),
+    clickL2_4: document.getElementById('clickL2_4'),
+    clickL2_5: document.getElementById('clickL2_5'),
 
     backBox2: document.getElementById('backBox2'),
 
@@ -159,7 +161,7 @@ function goIn1() {
         lightScreen()
         doc.level1.style.display = "none"
         doc.rLevel1.style.display = "block"
-         doc.tipBox.style.display = "block"
+        doc.tipBox.style.display = "block"
         doc.rLevel1.style.backgroundImage = "url('./img/halle.jpg')"
         interval = setInterval(oneSecondMore, 1000)
     }, 500)
@@ -329,17 +331,27 @@ function level2Next() {
 
         doc.clickL2_1.style.display = "block"
         doc.tipBox.style.display = "block"
-        doc.clickL2_1.style.left = "20vw"
+        doc.clickL2_1.style.left = "10vw"
         doc.clickL2_1.style.top = "20vh"
         doc.clickL2_1.style.width = "20vw"
         doc.clickL2_1.style.height = "50vh"
 
         doc.clickL2_2.style.display = "block"
-
-        doc.clickL2_2.style.left = "60vw"
+        doc.clickL2_2.style.left = "70vw"
         doc.clickL2_2.style.top = "20vh"
         doc.clickL2_2.style.width = "20vw"
         doc.clickL2_2.style.height = "50vh"
+
+        doc.clickL2_4.style.display = "block"
+        doc.clickL2_4.style.left = "45vw"
+        doc.clickL2_4.style.top = "40vh"
+        doc.clickL2_4.style.width = "10vw"
+        doc.clickL2_4.style.height = "20vh"
+
+        doc.backBox.style.display = "block"
+
+        doc.clickL2_3.style.display = "none"
+        doc.clickL2_5.style.display = "none"
 
         type("Der zweite Stock wirkt bewohnt.")
     }
@@ -352,12 +364,16 @@ function level2Next() {
 
         doc.backBox.style.display = "block"
 
-        doc.clickL2_1.style.left = "48vw"
-        doc.clickL2_1.style.top = "40vh"
-        doc.clickL2_1.style.width = "8vw"
-        doc.clickL2_1.style.height = "25vh"
+        doc.clickL2_3.style.display = "block"
+        doc.clickL2_3.style.left = "42.5vw"
+        doc.clickL2_3.style.top = "25vh"
+        doc.clickL2_3.style.width = "15vw"
+        doc.clickL2_3.style.height = "40vh"
 
+        doc.clickL2_1.style.display = "none"
         doc.clickL2_2.style.display = "none"
+        doc.clickL2_4.style.display = "none"
+        doc.clickL2_5.style.display = "none"
 
         type("Irgendwo hier muss sich doch ein Hinweis befinden")
 
@@ -373,7 +389,13 @@ function level2Next() {
         doc.clickL2_1.style.top = "10vh"
         doc.clickL2_1.style.width = "20vw"
         doc.clickL2_1.style.height = "30vh"
+        doc.clickL2_1.style.display = "none"
 
+        doc.clickL2_1.style.display = "none"
+        doc.clickL2_2.style.display = "none"
+        doc.clickL2_3.style.display = "none"
+        doc.clickL2_4.style.display = "none"
+        doc.clickL2_5.style.display = "none"
         type("Die große Uhr könnte nützlich sein")
 
     }
@@ -388,8 +410,15 @@ function level2Next() {
         doc.clickL2_1.style.top = "30vh"
         doc.clickL2_1.style.width = "10vw"
         doc.clickL2_1.style.height = "40vh"
+        doc.clickL2_1.style.display = "none"
 
-        type("Eingeschaltete Lichter? Wozu die wohl dienen")
+        doc.clickL2_1.style.display = "none"
+        doc.clickL2_2.style.display = "none"
+        doc.clickL2_3.style.display = "none"
+        doc.clickL2_4.style.display = "none"
+        doc.clickL2_5.style.display = "none"
+
+        type("Eingeschaltete Lampen? Wozu die wohl dienen")
 
     }
 
@@ -397,12 +426,18 @@ function level2Next() {
     else if (room2 == 4) {
 
         doc.rLevel2.style.backgroundImage =
-            "url('./img/geheimgang.jpg')"
+            "url('./img/geheimgang.png')"
 
-        doc.clickL2_1.style.left = "45vw"
-        doc.clickL2_1.style.top = "50vh"
-        doc.clickL2_1.style.width = "15vw"
-        doc.clickL2_1.style.height = "30vh"
+        doc.clickL2_5.style.display = "block"
+        doc.clickL2_5.style.left = "45vw"
+        doc.clickL2_5.style.top = "40vh"
+        doc.clickL2_5.style.width = "10vw"
+        doc.clickL2_5.style.height = "20vh"
+
+        doc.clickL2_1.style.display = "none"
+        doc.clickL2_2.style.display = "none"
+        doc.clickL2_3.style.display = "none"
+        doc.clickL2_4.style.display = "none"
 
         type("Der letzte Blick zeigt die Wahrheit")
 
@@ -416,6 +451,9 @@ function level2Next() {
 
         doc.clickL2_1.style.display = "none"
         doc.clickL2_2.style.display = "none"
+        doc.clickL2_3.style.display = "none"
+        doc.clickL2_4.style.display = "none"
+        doc.clickL2_5.style.display = "none"
 
         doc.codePanel2.style.display = "flex"
 
@@ -428,9 +466,13 @@ function level2Next() {
 
 function nextLevel2() {
 
-    if (room2 <= 5) {
+    /*if (room2 <= 5) {
         level2Next()
-    }
+    }*/
+
+    room2 = 1
+
+    level2Next()
 
 }
 
@@ -442,18 +484,36 @@ function nextLevel2Room() {
 
 }
 
-function backLevel2() {
-
-    room2 = 0
-
-    level2Next()
-
-}
-
 function bedroom2() {
     room2 = 3
 
     level2Next()
+}
+
+function gang2() {
+    room2 = 4
+
+    level2Next()
+}
+
+function door2() {
+    room2 = 5
+
+    level2Next()
+}
+
+function backLevel2() {
+
+    if (room2 < 4 || room2 == 5) {
+        room2 = 0
+    } else if (room2 == 4) {
+        room2 = 1
+    } else if (room2 > 5) {
+        room2 = 4
+    }
+
+    level2Next()
+
 }
 
 function checkCode2() {
@@ -466,14 +526,14 @@ function checkCode2() {
 
         doc.codePanel2.style.display = "none"
 
-        doc.rLevel2.style.backgroundImage =
-            "url('./img/escape.jpg')"
-
+        doc.backBox.style.display = "none"
         type("Die Tür öffnet sich langsam...")
 
         setTimeout(() => {
-
+            doc.rLevel2.style.backgroundImage =
+                "url('./img/tor.jpg')"
             doc.endscreen2.style.display = "block"
+            doc.tipBox.style.display = "none"
 
         }, 3000)
 
