@@ -7,6 +7,7 @@
 - Level 2 absgeschlossen
 - Tippleiste erstellt und zeigt mit Typed.js Tipps an
 - Sounddesign überall außer ingame
+- Leaderboard versucht, aber nicht ganz geschafft
 
 ## Ziele bis zum nächsten Sprint
 

@@ -334,7 +334,9 @@ nav img {
     }
 }
 
-#endscreen1, #endscreen2, #endscreen3 {
+#endscreen1,
+#endscreen2,
+#endscreen3 {
     text-align: center;
     font-size: 400%;
     position: absolute;
@@ -343,7 +345,9 @@ nav img {
     width: 100vw;
 }
 
-#endscreen1 img, #endscreen2 img, #endscreen3 img {
+#endscreen1 img,
+#endscreen2 img,
+#endscreen3 img {
     width: 30vw;
     margin: auto;
 }
@@ -352,7 +356,7 @@ nav img {
     width: 100vw;
     height: 8vh;
     background: #000000;
-    background: linear-gradient(0deg,rgba(0, 0, 0, 0.97) 0%, rgba(0, 0, 0, 0.97) 50%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.97) 0%, rgba(0, 0, 0, 0.97) 50%, rgba(0, 0, 0, 0) 100%);
     position: absolute;
     bottom: 0vh;
     padding: 10% 0% 0 10%;
