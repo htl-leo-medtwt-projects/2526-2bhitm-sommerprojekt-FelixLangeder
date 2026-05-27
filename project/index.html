@@ -12,7 +12,7 @@
     <link rel="icon" href="img/icon.jpg">
 </head>
 
-<body onclick="bgMusic()">
+<body onclick="bgMusicPlay()">
 
     <div id="lp">
         <nav id="nav">
@@ -61,7 +61,7 @@
             <h2>Level 1 - Das Erwachen</h2>
             <p class="infoL" id="info1"></p>
         </div>
-        <img src="img/rStart.jpg" onclick="goIn1(), windSound(), type('Willkommen im Schloss! Sieh dich mal um!')"
+        <img src="img/rStart.jpg" onclick="goIn1(), windSound()"
             alt="Betrete das Schloss" class="lpButton">
     </div>
 
@@ -94,7 +94,7 @@
                 Atem im Nacken, bevor dich die Finsternis verschlingt und dich zurückwirft. Nur wer stark genug ist, den
                 Schrecken zu widerstehen und das dunkle Geheimnis zu lüften, hat eine Chance, diesem Albtraum zu
                 entkommen.</i>`],
-                typeSpeed: 20,
+                typeSpeed: 0.5,
             });
         }
 

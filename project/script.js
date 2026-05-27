@@ -45,6 +45,7 @@ let doc = {
 
 let playerName = ""
 let timer = 0
+let bgmusic = new Audio('audio/bg.mp3')
 
 function setPlayerName(name) {
     if (name != "") {
@@ -164,6 +165,7 @@ function goIn1() {
         doc.tipBox.style.display = "block"
         doc.rLevel1.style.backgroundImage = "url('./img/halle.jpg')"
         interval = setInterval(oneSecondMore, 1000)
+        type('Willkommen im Schloss! Sieh dich mal um!')
     }, 500)
 }
 
@@ -531,22 +533,29 @@ function checkCode2() {
 
         doc.backBox2.style.display = "none"
         type("Die Tür öffnet sich langsam...")
+        new Audio('audio/open.mp3').play()
 
         setTimeout(() => {
             doc.rLevel2.style.backgroundImage =
                 "url('./img/tor.jpg')"
             doc.endscreen2.style.display = "block"
             doc.tipBox.style.display = "none"
+            bgmusic.pause()
+            new Audio('audio/win.mp3').play()
 
-        }, 3000)
+        }, 2000)
 
     } else {
 
         wrongCode2++
 
-        type("Falscher Code.")
+        if (wrongCode2 == 1) {
+            type("Falscher Code. Noch 2 Versuche!")
+        } else if (wrongCode2 == 2) {
+            type("Falscher Code. Noch 1 Versuch!")
+        }
 
-        let audio = new Audio("./sound/error.mp3")
+        let audio = new Audio("./audio/error.mp3")
 
         audio.play()
 
@@ -569,10 +578,12 @@ function grafAttack2() {
     let scream = new Audio("./audio/graf.mp3")
 
     scream.volume = 1
-
+    scream.loop = true
     scream.play()
 
     type("Der Graf hat dich gefunden.")
+
+    setTimeout(blackScreen, 4800)
 
     setTimeout(() => {
 
@@ -629,11 +640,10 @@ function oneSecondMore() {
 }
 
 //Sounddesign
-let bgmusic
 let bgmusicBool = true
-function bgMusic() {
+function bgMusicPlay() {
     if (bgmusicBool) {
-        bgmusic = new Audio('audio/bg.mp3').play()
+        bgmusic.play()
         bgmusicBool = false
         bgmusic.loop = true
     }
