@@ -601,6 +601,29 @@ function saveLevelResult(levelName, playerName, timer) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
+function showResults() {
+    const data = JSON.parse(localStorage.getItem("levelResults")) || {};
+
+    let levels = ["level1", "level2", "level3"];
+
+    for (let i = 0; i < levels.length; i++) {
+
+        let level = levels[i];
+
+        if (!data[level]) continue;
+
+        data[level].sort((a, b) => a.time - b.time);
+
+        document.getElementById(level).innerHTML =
+            data[level].map(player => `
+                <div class="playerBox">
+                    <div>${player.name}</div>
+                    <div>${player.time}s</div>
+                </div>
+            `).join("");
+    }
+}
+
 function oneSecondMore() {
     timer++
 }

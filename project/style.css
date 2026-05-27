@@ -140,6 +140,20 @@ nav img {
     margin-top: 30vh;
 }
 
+.flexi {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.playerBox {
+    background: url('img/box.jpg') no-repeat;
+    background-size: contain;
+    text-align: center;
+    font-size: 200%;
+    color: white;
+}
+
 /*How To*/
 #howTo {
     background: url('./img/how-to-bg.webp') fixed no-repeat;
