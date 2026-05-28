@@ -221,12 +221,18 @@ function onext() {
         doc.click1.style.top = "60vh"
         doc.click1.style.width = "15vw"
         doc.click1.style.height = "20vh"
+        doc.click1.style.cursor = "url('img/tropfen.png'), auto;"
         type('Jetzt bist du im Arbeitszimmer. Irgendwo hier muss sich ein geheimer Ausgang befinden!')
     } else if (counter == 4) {
-        doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmerO.jpg')"
-        type('Du hast ihn gefunden!')
+        new Audio('audio/fire.mp3').play()
+        setTimeout(() => {
+            doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmerO.jpg')"
+            type('Du hast ihn gefunden!')
+        })
     } else if (counter == 5) {
+        doc.click1.style.cursor = "pointer"
         doc.rLevel1.style.backgroundImage = "url('./img/tor.jpg')"
+        new Audio('audio/win.mp3').play()
         doc.tipBox.style.display = "none"
         doc.endscreen1.style.display = "block"
         clearInterval(interval)

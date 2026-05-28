@@ -16,3 +16,4 @@
 - Leaderboard für alle Level
 - Generelle, kleinere UI/UX Optimierungen
 - Spielstand laden soll funktionieren
+- Nach Level die Möglichkeit haben, gleich das nächste Level zu spielen
