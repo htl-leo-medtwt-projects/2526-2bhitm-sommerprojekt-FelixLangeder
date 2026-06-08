@@ -39,8 +39,25 @@ let doc = {
 
     tipBox2: document.getElementById('tipBox2'),
 
-    endscreen2: document.getElementById('endscreen2')
+    endscreen2: document.getElementById('endscreen2'),
 
+    rLevel3: document.getElementById('rLevel3'),
+
+    clickL3_1: document.getElementById('clickL3_1'),
+    clickL3_2: document.getElementById('clickL3_2'),
+    clickL3_3: document.getElementById('clickL3_3'),
+    clickL3_4: document.getElementById('clickL3_4'),
+    clickL3_5: document.getElementById('clickL3_5'),
+
+    backBox3: document.getElementById('backBox3'),
+
+    codePanel3: document.getElementById('codePanel3'),
+    codeInput3: document.getElementById('codeInput3'),
+
+    grafScreen3: document.getElementById('grafScreen3'),
+    grafImg3: document.getElementById('grafImg3'),
+
+    endscreen3: document.getElementById('endscreen3')
 }
 
 let playerName = ""
@@ -643,6 +660,366 @@ function showResults() {
 
 function oneSecondMore() {
     timer++
+}
+
+//Level 3
+const ROOMS3 = {
+    HALL: 0,
+    LABOR: 1,
+    CHAPEL: 2,
+    CLOCK: 3,
+    THRONE: 4,
+    CATACOMBS: 5,
+    CODE: 6
+}
+
+function startLevel3() {
+
+    blackScreen()
+
+    setTimeout(() => {
+
+        lightScreen()
+
+        doc.rLevel3.style.display = "block"
+
+        room3 = ROOMS3.HALL
+
+        future = false
+
+        futureTime = 0
+
+        wrongCode3 = 0
+
+        renderRoom3()
+
+        interval3 = setInterval(() => {
+
+            if (future) {
+
+                futureTime++
+
+                if (futureTime >= 120) {
+
+                    grafAttack3()
+
+                }
+
+            }
+
+        }, 1000)
+
+    }, 500)
+
+}
+
+function hideBoxes3() {
+
+    doc.clickL3_1.style.display = "none"
+    doc.clickL3_2.style.display = "none"
+    doc.clickL3_3.style.display = "none"
+    doc.clickL3_4.style.display = "none"
+    doc.clickL3_5.style.display = "none"
+
+}
+
+function renderRoom3() {
+
+    hideBoxes3()
+
+    doc.codePanel3.style.display = "none"
+
+    if (room3 == ROOMS3.HALL) {
+
+        if (future) {
+
+            doc.rLevel3.style.backgroundImage =
+                "url('./img/hall_future.jpg')"
+
+            type("Die Halle liegt in Trümmern.")
+
+        } else {
+
+            doc.rLevel3.style.backgroundImage =
+                "url('./img/hall_present.jpg')"
+
+            type("Die Zeit verbirgt die Wahrheit.")
+
+        }
+
+        doc.backBox3.style.display = "none"
+
+        // Labor
+        doc.clickL3_1.style.display = "block"
+        doc.clickL3_1.style.left = "15vw"
+        doc.clickL3_1.style.top = "20vh"
+        doc.clickL3_1.style.width = "15vw"
+        doc.clickL3_1.style.height = "50vh"
+        doc.clickL3_1.onclick = () => {
+
+            room3 = ROOMS3.LABOR
+            renderRoom3()
+
+        }
+
+        // Kapelle
+        doc.clickL3_2.style.display = "block"
+        doc.clickL3_2.style.left = "42vw"
+        doc.clickL3_2.style.top = "20vh"
+        doc.clickL3_2.style.width = "15vw"
+        doc.clickL3_2.style.height = "50vh"
+        doc.clickL3_2.onclick = () => {
+
+            room3 = ROOMS3.CHAPEL
+            renderRoom3()
+
+        }
+
+        // Uhrraum
+        doc.clickL3_3.style.display = "block"
+        doc.clickL3_3.style.left = "70vw"
+        doc.clickL3_3.style.top = "20vh"
+        doc.clickL3_3.style.width = "15vw"
+        doc.clickL3_3.style.height = "50vh"
+        doc.clickL3_3.onclick = () => {
+
+            room3 = ROOMS3.CLOCK
+            renderRoom3()
+
+        }
+
+        if (future) {
+
+            // Thronsaal
+
+            doc.clickL3_4.style.display = "block"
+
+            doc.clickL3_4.style.left = "45vw"
+            doc.clickL3_4.style.top = "70vh"
+            doc.clickL3_4.style.width = "10vw"
+            doc.clickL3_4.style.height = "15vh"
+
+            doc.clickL3_4.onclick = () => {
+
+                room3 = ROOMS3.THRONE
+
+                renderRoom3()
+
+            }
+
+        }
+
+    }
+
+    else if (room3 == ROOMS3.LABOR) {
+
+        doc.backBox3.style.display = "flex"
+
+        if (future) {
+
+            doc.rLevel3.style.backgroundImage =
+                "url('./img/labor_future.jpg')"
+
+            type("Zwischen den Trümmern erkennst du eine 4.")
+
+        } else {
+
+            doc.rLevel3.style.backgroundImage =
+                "url('./img/labor.jpg')"
+
+            type("Ein Glasbehälter trägt die Nummer 7.")
+
+        }
+
+    }
+
+    else if (room3 == ROOMS3.CHAPEL) {
+
+        doc.backBox3.style.display = "flex"
+
+        if (future) {
+
+            doc.rLevel3.style.backgroundImage =
+                "url('./img/kapelle_future.jpg')"
+
+            type("Auf dem Altar steht eine 9.")
+
+        } else {
+
+            doc.rLevel3.style.backgroundImage =
+                "url('./img/kapelle.jpg')"
+
+            type("Jemand hat eine 2 eingeritzt.")
+
+        }
+
+    }
+
+    else if (room3 == ROOMS3.CLOCK) {
+
+        doc.backBox3.style.display = "flex"
+
+        doc.rLevel3.style.backgroundImage =
+            "url('./img/uhrraum.jpg')"
+
+        type("Die Uhr scheint nicht von dieser Welt zu sein.")
+
+        doc.clickL3_1.style.display = "block"
+
+        doc.clickL3_1.style.left = "42vw"
+        doc.clickL3_1.style.top = "15vh"
+        doc.clickL3_1.style.width = "16vw"
+        doc.clickL3_1.style.height = "55vh"
+
+        doc.clickL3_1.onclick = () => {
+
+            travelTime()
+
+        }
+
+    }
+
+    else if (room3 == ROOMS3.THRONE) {
+
+        doc.backBox3.style.display = "flex"
+
+        doc.rLevel3.style.backgroundImage =
+            "url('./img/thronsaal_future.jpg')"
+
+        type("Auf dem Thron ist die Zahl 6 eingraviert.")
+
+        doc.clickL3_1.style.display = "block"
+
+        doc.clickL3_1.style.left = "70vw"
+        doc.clickL3_1.style.top = "30vh"
+        doc.clickL3_1.style.width = "15vw"
+        doc.clickL3_1.style.height = "50vh"
+
+        doc.clickL3_1.onclick = () => {
+
+            room3 = ROOMS3.CATACOMBS
+
+            renderRoom3()
+
+        }
+
+    }
+
+    else if (room3 == ROOMS3.CATACOMBS) {
+
+        doc.backBox3.style.display = "flex"
+
+        doc.rLevel3.style.backgroundImage =
+            "url('./img/katakomben_future.jpg')"
+
+        type("Eine einzelne 1 ist in den Stein geritzt.")
+
+        doc.clickL3_1.style.display = "block"
+
+        doc.clickL3_1.style.left = "45vw"
+        doc.clickL3_1.style.top = "60vh"
+        doc.clickL3_1.style.width = "15vw"
+        doc.clickL3_1.style.height = "20vh"
+
+        doc.clickL3_1.onclick = () => {
+
+            room3 = ROOMS3.CODE
+
+            renderRoom3()
+
+        }
+
+    }
+
+    else if (room3 == ROOMS3.CODE) {
+
+        doc.backBox3.style.display = "flex"
+
+        doc.rLevel3.style.backgroundImage =
+            "url('./img/codetor.jpg')"
+
+        doc.codePanel3.style.display = "flex"
+
+        type("Die Wahrheit liegt in einer anderen Zeit.")
+
+    }
+
+}
+
+function travelTime() {
+
+    future = !future
+
+    blackScreen()
+
+    setTimeout(() => {
+
+        lightScreen()
+
+        if (future) {
+
+            type("Die Uhr schlägt Mitternacht.")
+
+        } else {
+
+            type("Du kehrst zurück.")
+
+        }
+
+        renderRoom3()
+
+    }, 1000)
+
+}
+
+function backLevel3() {
+
+    room3 = ROOMS3.HALL
+
+    renderRoom3()
+
+}
+
+function checkCode3() {
+
+    if (doc.codeInput3.value == "4961") {
+
+        clearInterval(interval3)
+
+        doc.codePanel3.style.display = "none"
+
+        doc.endscreen3.style.display = "block"
+
+    } else {
+
+        wrongCode3++
+
+        type("Falscher Code.")
+
+        if (wrongCode3 >= 3) {
+
+            grafAttack3()
+
+        }
+
+    }
+
+}
+
+function grafAttack3() {
+
+    clearInterval(interval3)
+
+    doc.grafScreen3.style.display = "flex"
+
+    type("Die Zukunft gehört dem Grafen.")
+
+    setTimeout(() => {
+
+        location.reload()
+
+    }, 5000)
+
 }
 
 //Sounddesign

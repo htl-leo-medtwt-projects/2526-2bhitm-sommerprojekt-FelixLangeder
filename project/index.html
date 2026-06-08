@@ -61,8 +61,7 @@
             <h2>Level 1 - Das Erwachen</h2>
             <p class="infoL" id="info1"></p>
         </div>
-        <img src="img/rStart.jpg" onclick="goIn1(), windSound()"
-            alt="Betrete das Schloss" class="lpButton">
+        <img src="img/rStart.jpg" onclick="goIn1(), windSound()" alt="Betrete das Schloss" class="lpButton">
     </div>
 
     <div id="level2" style="display: none;">
@@ -191,7 +190,63 @@
         </div>
 
     </div>
-    <div style="display: none;" id="rLevel3"></div>
+    <div id="rLevel3" style="display:none;">
+
+        <!-- Clickboxen -->
+        <div class="clickBox hover" id="clickL3_1"></div>
+
+        <div class="clickBox hover" id="clickL3_2"></div>
+
+        <div class="clickBox hover" id="clickL3_3"></div>
+
+        <div class="clickBox hover" id="clickL3_4"></div>
+
+        <div class="clickBox hover" id="clickL3_5"></div>
+
+        <!-- Zurück-Button -->
+        <div class="hover" id="backBox3" onclick="backLevel3()" style="display:none; justify-content:center;">
+
+            <img src="img/arrow.png" alt="Pfeil" style="
+                transform: rotate(270deg);
+                margin: auto;
+                width: 3rem;
+                position: relative;
+                top: 2vh;">
+        </div>
+
+        <!-- Code-Eingabe -->
+        <div id="codePanel3" style="display:none;">
+
+            <input type="text" maxlength="4" id="codeInput3" placeholder="Code">
+
+            <button onclick="checkCode3()">
+                Öffnen
+            </button>
+
+        </div>
+
+        <!-- Graf Jumpscare -->
+        <div id="grafScreen3" style="display:none;">
+
+            <img src="img/graf_future.png" id="grafImg3" alt="Graf">
+
+        </div>
+
+        <!-- Endscreen -->
+        <div id="endscreen3" style="display:none;">
+
+            <h1>Herzlichen Glückwunsch</h1>
+
+            <p>
+                Du hast die Wahrheit über das Schloss entdeckt
+                und die Zeit überwunden.
+            </p>
+
+            <img src="img/back.jpg" class="lpButton" alt="Zurück" onclick="location.reload()">
+
+        </div>
+
+    </div>
 
     <div id="blackBox" class="fromBlack" style="display: block;"></div>
     <div id="audioBox"></div>
