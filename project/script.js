@@ -41,6 +41,7 @@ let doc = {
 
     endscreen2: document.getElementById('endscreen2'),
 
+    level3: document.getElementById('level3'),
     rLevel3: document.getElementById('rLevel3'),
 
     clickL3_1: document.getElementById('clickL3_1'),
@@ -673,7 +674,7 @@ const ROOMS3 = {
     CODE: 6
 }
 
-function startLevel3() {
+function goIn3() {
 
     blackScreen()
 
@@ -681,6 +682,7 @@ function startLevel3() {
 
         lightScreen()
 
+        doc.level3.style.display = "none"
         doc.rLevel3.style.display = "block"
 
         room3 = ROOMS3.HALL
@@ -734,14 +736,14 @@ function renderRoom3() {
         if (future) {
 
             doc.rLevel3.style.backgroundImage =
-                "url('./img/hall_future.jpg')"
+                "url('./img/hall_future.png')"
 
             type("Die Halle liegt in Trümmern.")
 
         } else {
 
             doc.rLevel3.style.backgroundImage =
-                "url('./img/hall_present.jpg')"
+                "url('./img/hall_present.png')"
 
             type("Die Zeit verbirgt die Wahrheit.")
 
@@ -818,14 +820,14 @@ function renderRoom3() {
         if (future) {
 
             doc.rLevel3.style.backgroundImage =
-                "url('./img/labor_future.jpg')"
+                "url('./img/labor_future.png')"
 
             type("Zwischen den Trümmern erkennst du eine 4.")
 
         } else {
 
             doc.rLevel3.style.backgroundImage =
-                "url('./img/labor.jpg')"
+                "url('./img/labor.png')"
 
             type("Ein Glasbehälter trägt die Nummer 7.")
 
@@ -840,14 +842,14 @@ function renderRoom3() {
         if (future) {
 
             doc.rLevel3.style.backgroundImage =
-                "url('./img/kapelle_future.jpg')"
+                "url('./img/kapelle_future.png')"
 
             type("Auf dem Altar steht eine 9.")
 
         } else {
 
             doc.rLevel3.style.backgroundImage =
-                "url('./img/kapelle.jpg')"
+                "url('./img/kapelle.png')"
 
             type("Jemand hat eine 2 eingeritzt.")
 
@@ -860,7 +862,7 @@ function renderRoom3() {
         doc.backBox3.style.display = "flex"
 
         doc.rLevel3.style.backgroundImage =
-            "url('./img/uhrraum.jpg')"
+            "url('./img/uhrraum.png')"
 
         type("Die Uhr scheint nicht von dieser Welt zu sein.")
 
@@ -884,7 +886,7 @@ function renderRoom3() {
         doc.backBox3.style.display = "flex"
 
         doc.rLevel3.style.backgroundImage =
-            "url('./img/thronsaal_future.jpg')"
+            "url('./img/thronsaal_future.png')"
 
         type("Auf dem Thron ist die Zahl 6 eingraviert.")
 
@@ -910,7 +912,7 @@ function renderRoom3() {
         doc.backBox3.style.display = "flex"
 
         doc.rLevel3.style.backgroundImage =
-            "url('./img/katakomben_future.jpg')"
+            "url('./img/katakomben_future.png')"
 
         type("Eine einzelne 1 ist in den Stein geritzt.")
 
@@ -936,7 +938,7 @@ function renderRoom3() {
         doc.backBox3.style.display = "flex"
 
         doc.rLevel3.style.backgroundImage =
-            "url('./img/codetor.jpg')"
+            "url('./img/codetor.png')"
 
         doc.codePanel3.style.display = "flex"
 
