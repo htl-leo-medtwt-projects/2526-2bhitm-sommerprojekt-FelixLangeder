@@ -380,6 +380,7 @@ nav img {
     width: 40vw;
     justify-content: center;
     gap: 1rem;
+    cursor: pointer;
 }
 
 #codePanel2 input, #codePanel3 input {

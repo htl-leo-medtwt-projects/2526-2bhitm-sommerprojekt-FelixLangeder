@@ -754,10 +754,10 @@ function renderRoom3() {
 
         // Labor
         doc.clickL3_1.style.display = "block"
-        doc.clickL3_1.style.left = "15vw"
+        doc.clickL3_1.style.left = "2vw"
         doc.clickL3_1.style.top = "20vh"
-        doc.clickL3_1.style.width = "15vw"
-        doc.clickL3_1.style.height = "50vh"
+        doc.clickL3_1.style.width = "13vw"
+        doc.clickL3_1.style.height = "60vh"
         doc.clickL3_1.onclick = () => {
 
             room3 = ROOMS3.LABOR
@@ -767,10 +767,10 @@ function renderRoom3() {
 
         // Kapelle
         doc.clickL3_2.style.display = "block"
-        doc.clickL3_2.style.left = "42vw"
-        doc.clickL3_2.style.top = "20vh"
-        doc.clickL3_2.style.width = "15vw"
-        doc.clickL3_2.style.height = "50vh"
+        doc.clickL3_2.style.left = "35vw"
+        doc.clickL3_2.style.top = "30vh"
+        doc.clickL3_2.style.width = "12vw"
+        doc.clickL3_2.style.height = "25vh"
         doc.clickL3_2.onclick = () => {
 
             room3 = ROOMS3.CHAPEL
@@ -780,10 +780,10 @@ function renderRoom3() {
 
         // Uhrraum
         doc.clickL3_3.style.display = "block"
-        doc.clickL3_3.style.left = "70vw"
-        doc.clickL3_3.style.top = "20vh"
-        doc.clickL3_3.style.width = "15vw"
-        doc.clickL3_3.style.height = "50vh"
+        doc.clickL3_3.style.left = "50vw"
+        doc.clickL3_3.style.top = "60vh"
+        doc.clickL3_3.style.width = "7vw"
+        doc.clickL3_3.style.height = "20vh"
         doc.clickL3_3.onclick = () => {
 
             room3 = ROOMS3.CLOCK
@@ -797,10 +797,10 @@ function renderRoom3() {
 
             doc.clickL3_4.style.display = "block"
 
-            doc.clickL3_4.style.left = "45vw"
-            doc.clickL3_4.style.top = "70vh"
+            doc.clickL3_4.style.left = "55vw"
+            doc.clickL3_4.style.top = "30vh"
             doc.clickL3_4.style.width = "10vw"
-            doc.clickL3_4.style.height = "15vh"
+            doc.clickL3_4.style.height = "18vh"
 
             doc.clickL3_4.onclick = () => {
 
@@ -985,19 +985,32 @@ function backLevel3() {
 
 function checkCode3() {
 
-    if (doc.codeInput3.value == "4961") {
+    if (doc.codeInput3.value == "7429") {
 
         clearInterval(interval3)
 
         doc.codePanel3.style.display = "none"
 
-        doc.endscreen3.style.display = "block"
+        doc.backBox3.style.display = "none"
+        type("Die Tür öffnet sich langsam...")
+        new Audio('audio/open.mp3').play()
+
+        setTimeout(() => {
+            doc.rLevel3.style.backgroundImage =
+                "url('./img/tor.jpg')"
+            doc.endscreen3.style.display = "block"
+            doc.tipBox.style.display = "none"
+            bgmusic.pause()
+            new Audio('audio/win.mp3').play()
+
+        }, 2000)
 
     } else {
 
         wrongCode3++
 
         type("Falscher Code.")
+        new Audio('audio/error.mp3').play()
 
         if (wrongCode3 >= 3) {
 
@@ -1011,11 +1024,21 @@ function checkCode3() {
 
 function grafAttack3() {
 
-    clearInterval(interval3)
+    clearInterval(grafInterval2)
 
-    doc.grafScreen3.style.display = "flex"
+    doc.rLevel3.style.backgroundImage = "url('img/graf.png')"
+    doc.codePanel3.style.display = "none"
+    doc.backBox3.style.display = "none"
 
-    type("Die Zukunft gehört dem Grafen.")
+    let scream = new Audio("./audio/graf.mp3")
+
+    scream.volume = 1
+    scream.loop = true
+    scream.play()
+
+    type("Der Graf hat dich gefunden.")
+
+    setTimeout(blackScreen, 4800)
 
     setTimeout(() => {
 
@@ -1024,6 +1047,7 @@ function grafAttack3() {
     }, 5000)
 
 }
+
 
 //Sounddesign
 let bgmusicBool = true
