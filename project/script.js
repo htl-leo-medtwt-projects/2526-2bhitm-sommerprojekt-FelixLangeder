@@ -684,6 +684,7 @@ function goIn3() {
 
         doc.level3.style.display = "none"
         doc.rLevel3.style.display = "block"
+        doc.tipBox.style.display = "block"
 
         room3 = ROOMS3.HALL
 
@@ -738,14 +739,14 @@ function renderRoom3() {
             doc.rLevel3.style.backgroundImage =
                 "url('./img/hall_future.png')"
 
-            type("Die Halle liegt in Trümmern.")
+            type("Die Halle hat sich verändert.")
 
         } else {
 
             doc.rLevel3.style.backgroundImage =
                 "url('./img/hall_present.png')"
 
-            type("Die Zeit verbirgt die Wahrheit.")
+            type("Der alte Kerker birgt neue Gefahren")
 
         }
 
@@ -822,14 +823,14 @@ function renderRoom3() {
             doc.rLevel3.style.backgroundImage =
                 "url('./img/labor_future.png')"
 
-            type("Zwischen den Trümmern erkennst du eine 4.")
+            type("Die Zeit hat auch hier ihre Spuren hinterlassen.")
 
         } else {
 
             doc.rLevel3.style.backgroundImage =
                 "url('./img/labor.png')"
 
-            type("Ein Glasbehälter trägt die Nummer 7.")
+            type("Im alten Labor könnte etwas nützliches sein.")
 
         }
 
@@ -844,14 +845,14 @@ function renderRoom3() {
             doc.rLevel3.style.backgroundImage =
                 "url('./img/kapelle_future.png')"
 
-            type("Auf dem Altar steht eine 9.")
+            type("Vielleicht hat die Zeit auch hier einen Hinweis hinterlassen.")
 
         } else {
 
             doc.rLevel3.style.backgroundImage =
                 "url('./img/kapelle.png')"
 
-            type("Jemand hat eine 2 eingeritzt.")
+            type("Die alte Kathedrale birgt auch ihre Geheimnisse.")
 
         }
 
@@ -864,7 +865,7 @@ function renderRoom3() {
         doc.rLevel3.style.backgroundImage =
             "url('./img/uhrraum.png')"
 
-        type("Die Uhr scheint nicht von dieser Welt zu sein.")
+        type("Die Uhr scheint einen besonderen Zweck zu erfüllen.")
 
         doc.clickL3_1.style.display = "block"
 
@@ -888,7 +889,7 @@ function renderRoom3() {
         doc.rLevel3.style.backgroundImage =
             "url('./img/thronsaal_future.png')"
 
-        type("Auf dem Thron ist die Zahl 6 eingraviert.")
+        type("Von hier kann der Graf nicht weit sein. Du solltest dich beeilen!")
 
         doc.clickL3_1.style.display = "block"
 
@@ -914,7 +915,7 @@ function renderRoom3() {
         doc.rLevel3.style.backgroundImage =
             "url('./img/katakomben_future.png')"
 
-        type("Eine einzelne 1 ist in den Stein geritzt.")
+        type("Hier könnte es richtung Ausgang gehen")
 
         doc.clickL3_1.style.display = "block"
 
