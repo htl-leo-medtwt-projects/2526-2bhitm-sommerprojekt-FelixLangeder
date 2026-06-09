@@ -797,10 +797,10 @@ function renderRoom3() {
 
             doc.clickL3_4.style.display = "block"
 
-            doc.clickL3_4.style.left = "55vw"
-            doc.clickL3_4.style.top = "30vh"
-            doc.clickL3_4.style.width = "10vw"
-            doc.clickL3_4.style.height = "18vh"
+            doc.clickL3_4.style.left = "50vw"
+            doc.clickL3_4.style.top = "35vh"
+            doc.clickL3_4.style.width = "15vw"
+            doc.clickL3_4.style.height = "15vh"
 
             doc.clickL3_4.onclick = () => {
 
@@ -869,10 +869,10 @@ function renderRoom3() {
 
         doc.clickL3_1.style.display = "block"
 
-        doc.clickL3_1.style.left = "42vw"
+        doc.clickL3_1.style.left = "50vw"
         doc.clickL3_1.style.top = "15vh"
         doc.clickL3_1.style.width = "16vw"
-        doc.clickL3_1.style.height = "55vh"
+        doc.clickL3_1.style.height = "60vh"
 
         doc.clickL3_1.onclick = () => {
 
@@ -893,10 +893,10 @@ function renderRoom3() {
 
         doc.clickL3_1.style.display = "block"
 
-        doc.clickL3_1.style.left = "70vw"
-        doc.clickL3_1.style.top = "30vh"
-        doc.clickL3_1.style.width = "15vw"
-        doc.clickL3_1.style.height = "50vh"
+        doc.clickL3_1.style.left = "40vw"
+        doc.clickL3_1.style.top = "75vh"
+        doc.clickL3_1.style.width = "20vw"
+        doc.clickL3_1.style.height = "20vh"
 
         doc.clickL3_1.onclick = () => {
 
