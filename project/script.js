@@ -239,7 +239,7 @@ function onext() {
         doc.click1.style.top = "60vh"
         doc.click1.style.width = "15vw"
         doc.click1.style.height = "20vh"
-        doc.click1.style.cursor = "url('img/tropfen.png'), auto;"
+        doc.click1.style = "cursor: url('img/tropfen.png'), auto; display: block; left: 42.5vw; top: 60vh; height: 20vh; width: 15vw;"
         type('Jetzt bist du im Arbeitszimmer. Irgendwo hier muss sich ein geheimer Ausgang befinden!')
     } else if (counter == 4) {
         new Audio('audio/fire.mp3').play()
@@ -247,9 +247,11 @@ function onext() {
             doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmerO.jpg')"
             type('Du hast ihn gefunden!')
         })
+        doc.click1.style.cursor = "pointer"
     } else if (counter == 5) {
         doc.click1.style.cursor = "pointer"
         doc.rLevel1.style.backgroundImage = "url('./img/tor.jpg')"
+        bgmusic.pause()
         new Audio('audio/win.mp3').play()
         doc.tipBox.style.display = "none"
         doc.endscreen1.style.display = "block"
