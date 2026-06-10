@@ -188,6 +188,7 @@ function goIn1() {
 }
 
 function backBox() {
+    playSteps()
     if (counter2 == 2) {
         counter--
         counter2--
@@ -202,6 +203,7 @@ function backBox() {
 }
 
 function onext() {
+    playSteps()
     if (counter == 0) {
         doc.rLevel1.style.backgroundImage = "url('./img/halle.jpg')"
         doc.click2.style.display = "none"
@@ -262,6 +264,7 @@ function onext() {
 }
 
 function o2next() {
+    playSteps()
     if (counter2 == 1) {
         doc.click1.style.display = "none"
         doc.click2.style.display = "none"
@@ -352,6 +355,7 @@ function goIn2() {
 function level2Next() {
 
     // HAUPTHALLE
+    playSteps()
     if (room2 == 0) {
 
         doc.rLevel2.style.backgroundImage =
@@ -534,6 +538,7 @@ function door2() {
 
 function backLevel2() {
 
+    playSteps()
     if (room2 < 4 || room2 == 5) {
         room2 = 0
     } else if (room2 == 4) {
@@ -734,6 +739,7 @@ function renderRoom3() {
 
     doc.codePanel3.style.display = "none"
 
+    playSteps()
     if (room3 == ROOMS3.HALL) {
 
         if (future) {
@@ -1066,4 +1072,8 @@ function bgMusicPlay() {
 let wind
 function windSound() {
     wind = new Audio('audio/wind.mp3').play()
+}
+
+function playSteps() {
+    new Audio('audio/steps.mp3').play()
 }
