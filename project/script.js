@@ -893,8 +893,10 @@ function renderRoom3() {
 
         doc.clickL3_1.style.display = "block"
 
+        doc.clickL3_1.style.position = "absolute"
+        doc.clickL3_1.style.zIndex = "100000000"
         doc.clickL3_1.style.left = "40vw"
-        doc.clickL3_1.style.top = "75vh"
+        doc.clickL3_1.style.top = "70vh"
         doc.clickL3_1.style.width = "20vw"
         doc.clickL3_1.style.height = "20vh"
 
@@ -920,9 +922,9 @@ function renderRoom3() {
         doc.clickL3_1.style.display = "block"
 
         doc.clickL3_1.style.left = "45vw"
-        doc.clickL3_1.style.top = "60vh"
+        doc.clickL3_1.style.top = "40vh"
         doc.clickL3_1.style.width = "15vw"
-        doc.clickL3_1.style.height = "20vh"
+        doc.clickL3_1.style.height = "30vh"
 
         doc.clickL3_1.onclick = () => {
 
