@@ -160,6 +160,7 @@ function loadCheckpoint() {
     //TODO
 }
 
+let levelsBgSound
 //Level 1
 let counter = 1
 let counter2 = 1
@@ -177,6 +178,10 @@ let interval
 function goIn1() {
     blackScreen()
     setTimeout(() => {
+        bgmusic.pause()
+        levelsBgSound = new Audio('audio/levelBg.mp3')
+        levelsBgSound.play()
+        
         lightScreen()
         doc.level1.style.display = "none"
         doc.rLevel1.style.display = "block"
@@ -254,6 +259,7 @@ function onext() {
         doc.click1.style.cursor = "pointer"
         doc.rLevel1.style.backgroundImage = "url('./img/tor.jpg')"
         bgmusic.pause()
+        levelsBgSound.pause()
         new Audio('audio/win.mp3').play()
         doc.tipBox.style.display = "none"
         doc.endscreen1.style.display = "block"
@@ -331,6 +337,9 @@ function goIn2() {
     setTimeout(() => {
 
         lightScreen()
+
+        bgmusic.pause()
+        levelsBgSound = new Audio('audio/levelBg.mp3').play()
 
         doc.level2.style.display = "none"
         doc.rLevel2.style.display = "block"
@@ -572,6 +581,7 @@ function checkCode2() {
             doc.endscreen2.style.display = "block"
             doc.tipBox.style.display = "none"
             bgmusic.pause()
+            levelsBgSound.pause()
             new Audio('audio/win.mp3').play()
 
         }, 2000)
@@ -688,6 +698,9 @@ function goIn3() {
     setTimeout(() => {
 
         lightScreen()
+
+        bgmusic.pause()
+        levelsBgSound = new Audio('audio/levelBg.mp3').play()
 
         doc.level3.style.display = "none"
         doc.rLevel3.style.display = "block"
@@ -1011,6 +1024,7 @@ function checkCode3() {
             doc.endscreen3.style.display = "block"
             doc.tipBox.style.display = "none"
             bgmusic.pause()
+            levelsBgSound.pause()
             new Audio('audio/win.mp3').play()
 
         }, 2000)
