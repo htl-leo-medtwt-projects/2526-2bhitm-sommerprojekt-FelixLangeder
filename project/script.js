@@ -181,7 +181,7 @@ function goIn1() {
         bgmusic.pause()
         levelsBgSound = new Audio('audio/levelBg.mp3')
         levelsBgSound.play()
-        
+
         lightScreen()
         doc.level1.style.display = "none"
         doc.rLevel1.style.display = "block"
@@ -289,19 +289,22 @@ function o2next() {
 }
 
 function changeHebel() {
-    if (hebel) {
-        hebel = false
-        doc.hebel.style.animation = "hebel 0.5s ease-in-out 1 reverse"
-        setTimeout(() => {
-            doc.hebel.style = "display: block; transform: rotate(0deg);"
-        }, 450)
-    } else {
-        hebel = true
-        doc.hebel.style.animation = "hebel 0.5s ease-in-out 1"
-        setTimeout(() => {
-            doc.hebel.style = "display: block; transform: rotate(180deg);"
-        }, 450)
-    }
+    new Audio('audio/hebel.mp3').play()
+    setTimeout(() => {
+        if (hebel) {
+            hebel = false
+            doc.hebel.style.animation = "hebel 0.5s ease-in-out 1 reverse"
+            setTimeout(() => {
+                doc.hebel.style = "display: block; transform: rotate(0deg);"
+            }, 450)
+        } else {
+            hebel = true
+            doc.hebel.style.animation = "hebel 0.5s ease-in-out 1"
+            setTimeout(() => {
+                doc.hebel.style = "display: block; transform: rotate(180deg);"
+            }, 450)
+        }
+    }, 100)
 }
 
 function blackScreen() {
