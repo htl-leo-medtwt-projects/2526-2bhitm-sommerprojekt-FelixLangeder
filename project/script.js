@@ -304,7 +304,7 @@ function changeHebel() {
                 doc.hebel.style = "display: block; transform: rotate(180deg);"
             }, 450)
         }
-    }, 100)
+    }, 300)
 }
 
 function blackScreen() {
