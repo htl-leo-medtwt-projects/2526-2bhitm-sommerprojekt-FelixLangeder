@@ -934,29 +934,17 @@ function renderRoom3() {
 }
 
 function travelTime() {
-
     future = !future
-
     blackScreen()
-
     setTimeout(() => {
-
         lightScreen()
-
         if (future) {
-
             type("Die Uhr schlägt Mitternacht.")
-
         } else {
-
             type("Du kehrst zurück.")
-
         }
-
         renderRoom3()
-
     }, 1000)
-
 }
 
 function backLevel3() {
