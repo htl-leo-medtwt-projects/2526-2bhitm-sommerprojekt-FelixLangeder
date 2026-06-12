@@ -16,7 +16,7 @@
 
     <div id="lp">
         <nav id="nav">
-            <img id="lpButton" onclick="leaderboard(), windSound()" src="img/leaderboard.png" alt="leaderboard">
+            <img id="lpButton" onclick="leaderboard(), windSound(), showResults()" src="img/leaderboard.png" alt="leaderboard">
             <img id="lpButton" onclick="startGame(), windSound()" src="img/start-button.png" alt="start">
             <img id="lpButton" onclick="howTo(), windSound()" src="img/how-to.png" alt="how-to">
         </nav>
@@ -41,11 +41,11 @@
             <img src="img/lv2.jpg" alt="Level2" class="leaderboardImg">
             <img src="img/lv3.jpg" alt="Level3" class="leaderboardImg">
         </div>
-        <!--<div id="ll">
-            <div class="flexi" id="level1"></div>
-            <div class="flexi" id="level2"></div>
-            <div class="flexi" id="level3"></div>
-        </div>-->
+        <div id="ll">
+            <div class="flexi" id="lv1"></div>
+            <div class="flexi" id="lv2"></div>
+            <div class="flexi" id="lv3"></div>
+        </div>
         <img class="back" onclick="lp(), windSound()" src="img/back.png" alt="back" id="lpButton">
     </div>
 

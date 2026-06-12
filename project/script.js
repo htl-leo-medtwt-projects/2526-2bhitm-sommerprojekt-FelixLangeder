@@ -637,48 +637,6 @@ function grafAttack2() {
 
 }
 
-//Local-Storage
-function saveLevelResult(levelName, playerName, timer) {
-    const STORAGE_KEY = "levelResults";
-    let data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-
-    if (!data[levelName]) {
-        data[levelName] = [];
-    }
-
-    data[levelName].push({
-        name: playerName,
-        time: timer
-    });
-
-    data[levelName].sort((a, b) => a.time - b.time);
-
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-}
-
-function showResults() {
-    const data = JSON.parse(localStorage.getItem("levelResults")) || {};
-
-    let levels = ["level1", "level2", "level3"];
-
-    for (let i = 0; i < levels.length; i++) {
-
-        let level = levels[i];
-
-        if (!data[level]) continue;
-
-        data[level].sort((a, b) => a.time - b.time);
-
-        document.getElementById(level).innerHTML =
-            data[level].map(player => `
-                <div class="playerBox">
-                    <div>${player.name}</div>
-                    <div>${player.time}s</div>
-                </div>
-            `).join("");
-    }
-}
-
 function oneSecondMore() {
     timer++
 }
@@ -1093,4 +1051,65 @@ function windSound() {
 
 function playSteps() {
     new Audio('audio/steps.mp3').play()
+}
+
+//Local-Storage
+function saveLevelResult(levelName, playerName, timer) {
+    const STORAGE_KEY = "levelResults";
+    let data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+
+    if (!data[levelName]) {
+        data[levelName] = [];
+    }
+
+    data[levelName].push({
+        name: playerName,
+        time: timer
+    });
+
+    data[levelName].sort((a, b) => a.time - b.time);
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function showResults() {
+    const data = JSON.parse(localStorage.getItem("levelResults")) || {};
+    console.log(data)
+
+    let levels = ["level1", "level2", "level3"];
+
+    for (let i = 0; i < levels.length; i++) {
+
+        let level = levels[i];
+
+        //if (!data[level]) continue;
+
+        data[i + 1].sort((a, b) => a.time - b.time);
+
+        let levelToPut
+        if (level == "level1") {
+            levelToPut = "lv1"
+        } else if (level == "level2") {
+            levelToPut = "lv2"
+        } else if (level == "level2") {
+            levelToPut = "lv3"
+        }
+
+        /*document.getElementById(levelToPut).innerHTML =
+            data[level].map(player => `
+                <div class="playerBox">
+                    <div>${player.name}</div>
+                    <div>${player.time}s</div>
+                </div>
+            `).join("");*/
+
+        for (let i = 0; i < level.length; i++) {
+            document.getElementById('lv1').innerHTML += `
+                <div class="playerBox">
+                    <div>${data[i + 1].player.name}</div>
+                    <div>${data[i + 1].player.time}s</div>
+                </div>
+            `
+        }
+    }
 }
