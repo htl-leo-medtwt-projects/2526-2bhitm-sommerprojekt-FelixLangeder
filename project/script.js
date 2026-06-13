@@ -586,7 +586,7 @@ function checkCode2() {
             bgmusic.pause()
             levelsBgSound.pause()
             new Audio('audio/win.mp3').play()
-
+            saveLevelResult("2", playerName, timer)
         }, 2000)
 
     } else {
@@ -975,7 +975,7 @@ function checkCode3() {
             bgmusic.pause()
             levelsBgSound.pause()
             new Audio('audio/win.mp3').play()
-
+            saveLevelResult("3", playerName, timer)
         }, 2000)
 
     } else {
@@ -1060,44 +1060,23 @@ function saveLevelResult(levelName, playerName, timer) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
+let data
 function showResults() {
-    const data = JSON.parse(localStorage.getItem("levelResults")) || {};
+    data = JSON.parse(localStorage.getItem("levelResults")) || {};
     console.log(data)
 
-    let levels = ["level1", "level2", "level3"];
-
-    for (let i = 0; i < levels.length; i++) {
-
-        let level = levels[i];
-
-        //if (!data[level]) continue;
-
-        data[i + 1].sort((a, b) => a.time - b.time);
-
-        let levelToPut
-        if (level == "level1") {
-            levelToPut = "lv1"
-        } else if (level == "level2") {
-            levelToPut = "lv2"
-        } else if (level == "level2") {
-            levelToPut = "lv3"
-        }
-
-        /*document.getElementById(levelToPut).innerHTML =
-            data[level].map(player => `
+    for (let i = 1; i < 3; i++) {
+        console.log(data)
+        if (!data[i]) continue;
+        let string = ""
+        for (let j = 0; j < data[i].length; j++) {
+            string += `
                 <div class="playerBox">
-                    <div>${player.name}</div>
-                    <div>${player.time}s</div>
-                </div>
-            `).join("");*/
-
-        for (let i = 0; i < level.length; i++) {
-            document.getElementById('lv1').innerHTML += `
-                <div class="playerBox">
-                    <div>${data[i + 1].player.name}</div>
-                    <div>${data[i + 1].player.time}s</div>
+                    <div>${data[i][j].name}</div>
+                    <div>${data[i][j].time} Sekunden</div>
                 </div>
             `
         }
+        document.getElementById(i).innerHTML = string
     }
 }
