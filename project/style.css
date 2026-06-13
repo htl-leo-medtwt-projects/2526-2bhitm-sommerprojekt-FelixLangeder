@@ -140,18 +140,26 @@ nav img {
     margin-top: 30vh;
 }
 
+.ll {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 33.3333333%);
+}
+
 .flexi {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin: auto;
 }
 
 .playerBox {
     background: url('img/box.jpg') no-repeat;
-    background-size: contain;
+    background-size: cover;
     text-align: center;
     font-size: 200%;
     color: white;
+    width: 20vw;
 }
 
 /*How To*/

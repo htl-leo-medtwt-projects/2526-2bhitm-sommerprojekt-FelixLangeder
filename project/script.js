@@ -342,7 +342,8 @@ function goIn2() {
         lightScreen()
 
         bgmusic.pause()
-        levelsBgSound = new Audio('audio/levelBg.mp3').play()
+        levelsBgSound = new Audio('audio/levelBg.mp3')
+        levelsBgSound.play()
 
         doc.level2.style.display = "none"
         doc.rLevel2.style.display = "block"
@@ -351,6 +352,7 @@ function goIn2() {
 
         level2Next()
 
+        interval = setInterval(oneSecondMore, 1000)
         grafInterval2 = setInterval(() => {
 
             dangerTimer2++
@@ -570,6 +572,7 @@ function checkCode2() {
 
     if (code == secretCode2) {
 
+        clearInterval(interval)
         clearInterval(grafInterval2)
 
         doc.codePanel2.style.display = "none"
@@ -613,6 +616,7 @@ function checkCode2() {
 
 function grafAttack2() {
 
+    clearInterval(interval)
     clearInterval(grafInterval2)
 
     doc.rLevel2.style.backgroundImage = "url('img/graf.png')"
@@ -661,7 +665,8 @@ function goIn3() {
         lightScreen()
 
         bgmusic.pause()
-        levelsBgSound = new Audio('audio/levelBg.mp3').play()
+        levelsBgSound = new Audio('audio/levelBg.mp3')
+        levelsBgSound.play()
 
         doc.level3.style.display = "none"
         doc.rLevel3.style.display = "block"
@@ -677,6 +682,7 @@ function goIn3() {
 
         renderRoom3()
 
+        interval = setInterval(oneSecondMore, 1000)
         interval3 = setInterval(() => {
 
             if (future) {
@@ -959,6 +965,7 @@ function checkCode3() {
 
     if (doc.codeInput3.value == "7429") {
 
+        clearInterval(interval)
         clearInterval(interval3)
 
         doc.codePanel3.style.display = "none"
