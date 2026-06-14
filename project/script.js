@@ -366,6 +366,12 @@ function goIn2() {
     }, 500)
 }
 
+function playLevel2() {
+    doc.rLevel1.style.display = "none"
+    timer = 0
+    startLv2()
+}
+
 function level2Next() {
 
     // HAUPTHALLE
@@ -701,6 +707,12 @@ function goIn3() {
 
     }, 500)
 
+}
+
+function playLevel3() {
+    doc.rLevel2.style.display = "none"
+    timer = 0
+    startLv3()
 }
 
 function hideBoxes3() {

@@ -84,6 +84,17 @@ nav img {
     transform: scale(110%);
 }
 
+.buttons {
+    display: flex;
+    gap: 1rem;
+    width: 80vw;
+    margin: auto;
+}
+
+.buttons img {
+    width: 30vw;
+}
+
 #lCheckpoint {
     position: absolute;
     margin: auto;
