@@ -513,6 +513,12 @@ function level2Next() {
 
         doc.codePanel2.style.display = "flex"
 
+        doc.codeInput2.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                checkCode2()
+            }
+        });
+
         type("Vier Zahlen trennen dich von der Freiheit")
 
     }
@@ -942,6 +948,12 @@ function renderRoom3() {
 
         doc.backBox3.style.display = "flex"
 
+        doc.codeInput3.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                checkCode3()
+            }
+        });
+
         doc.rLevel3.style.backgroundImage =
             "url('./img/codetor.png')"
 
@@ -1004,13 +1016,16 @@ function checkCode3() {
 
         wrongCode3++
 
-        type("Falscher Code.")
         new Audio('audio/error.mp3').play()
 
         if (wrongCode3 >= 3) {
 
             grafAttack3()
 
+        } else if (wrongCode3 == 2) {
+            type("Falscher Code. Noch einen Versuch")
+        } else if (wrongCode3 == 1) {
+            type("Falscher Code. Noch zwei Versuche")
         }
 
     }
