@@ -8,7 +8,7 @@
 - Tippleiste erstellt und zeigt mit Typed.js Tipps an
 - Sounddesign sehr viel gemacht
 - Leaderboard versucht, aber nicht ganz geschafft
-
+ 
 ## Ziele bis zum nächsten Sprint
 
 - Level 3 abschließen

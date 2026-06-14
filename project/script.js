@@ -207,6 +207,7 @@ function backBox() {
     }
 }
 
+let fireMusic = new Audio('audio/fire.mp3')
 function onext() {
     playSteps()
     if (counter == 0) {
@@ -249,13 +250,14 @@ function onext() {
         doc.click1.style = "cursor: url('img/tropfen.png'), auto; display: block; left: 42.5vw; top: 60vh; height: 20vh; width: 15vw;"
         type('Jetzt bist du im Arbeitszimmer. Irgendwo hier muss sich ein geheimer Ausgang befinden!')
     } else if (counter == 4) {
-        new Audio('audio/fire.mp3').play()
+        fireMusic.play()
         setTimeout(() => {
             doc.rLevel1.style.backgroundImage = "url('./img/arbeitszimmerO.jpg')"
             type('Du hast ihn gefunden!')
         })
         doc.click1.style.cursor = "pointer"
     } else if (counter == 5) {
+        fireMusic.pause()
         doc.click1.style.cursor = "pointer"
         doc.rLevel1.style.backgroundImage = "url('./img/tor.jpg')"
         bgmusic.pause()
@@ -304,7 +306,7 @@ function changeHebel() {
                 doc.hebel.style = "display: block; transform: rotate(180deg);"
             }, 450)
         }
-    }, 300)
+    }, 100)
 }
 
 function blackScreen() {
@@ -953,6 +955,7 @@ function renderRoom3() {
 
 function travelTime() {
     future = !future
+    new Audio('audio/clock.mp3').play()
     blackScreen()
     setTimeout(() => {
         lightScreen()
