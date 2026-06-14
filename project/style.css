@@ -3,12 +3,20 @@
     src: url(font/IrishGrover-Regular.ttf) format("truetype");
 }
 
-body {
-    overflow: hidden;
+* {
     margin: 0;
     padding: 0;
-    font-family: irish;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
     color: white;
+    font-family: irish;
+    background: url('./img/bg-leaderboard.webp') fixed no-repeat;
+    background-size: cover;
+    background-position: top;
+    overflow: hidden;
 }
 
 input::placeholder {
@@ -36,7 +44,7 @@ input::placeholder {
     width: 12.5vw;
     position: relative;
     top: 30vh;
-    left: 41.5vw;
+    left: 43.5vw;
     transform: scale(120%);
     height: 1.7rem;
 }
@@ -95,14 +103,6 @@ nav img {
     width: 30vw;
 }
 
-#lCheckpoint {
-    position: absolute;
-    margin: auto;
-    top: 75vh;
-    left: 40vw;
-    width: 20vw;
-}
-
 #levelChoice {
     display: grid;
     grid-template-columns: repeat(3, 33.3333333%);
@@ -125,9 +125,6 @@ nav img {
 
 /*Leaderboard*/
 #leaderboard {
-    background: url('./img/bg-leaderboard.webp') fixed no-repeat;
-    background-size: cover;
-    background-position: top;
     width: 100vw;
     height: 100vh;
 }
@@ -139,7 +136,7 @@ nav img {
 }
 
 .back {
-    position: absolute;
+    position: fixed;
     bottom: 4rem;
     left: 4rem;
     width: 15%;
@@ -151,26 +148,38 @@ nav img {
     margin-top: 30vh;
 }
 
-.ll {
+#ll {
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 33.3333333%);
+    gap: 1rem;
+    padding: 1rem;
+    width: 100vw;
+    align-items: end;
 }
 
 .flexi {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto;
     gap: 0.5rem;
     margin: auto;
+    align-items: start;
+    position: relative;
+    top: 0;
+    height: 5vw;
 }
 
 .playerBox {
-    background: url('img/box.jpg') no-repeat;
-    background-size: cover;
+    background: rgb(43, 14, 14);
+    border: rgb(77, 77, 77) solid 0.3rem;
+    border-radius: 0.1rem;
     text-align: center;
-    font-size: 200%;
+    font-size: 2rem;
     color: white;
-    width: 20vw;
+    width: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    margin: auto;
 }
 
 /*How To*/
@@ -206,6 +215,7 @@ nav img {
     font-size: 1.7vw;
     width: 75vw;
     color: white;
+    padding: 3rem;
 }
 
 /*Level 1 */

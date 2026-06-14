@@ -81,6 +81,8 @@ function leaderboard() {
         lightScreen()
         doc.lp.style.display = "none"
         doc.leaderboard.style.display = "block"
+        document.body.style.overflowY = "visible"
+        document.body.style.overflowX = "hidden"
     }, 500)
 }
 
@@ -154,10 +156,6 @@ function startLv3() {
             type3()
         }, 500)
     }
-}
-
-function loadCheckpoint() {
-    //TODO
 }
 
 let levelsBgSound
@@ -369,9 +367,11 @@ function goIn2() {
 }
 
 function playLevel2() {
-    doc.rLevel1.style.display = "none"
     timer = 0
     startLv2()
+    setTimeout(() => {
+        doc.rLevel1.style.display = "none"
+    }, 500)
 }
 
 function level2Next() {
@@ -718,9 +718,11 @@ function goIn3() {
 }
 
 function playLevel3() {
-    doc.rLevel2.style.display = "none"
     timer = 0
     startLv3()
+    setTimeout(() => {
+        doc.rLevel2.style.display = "none"
+    }, 500)
 }
 
 function hideBoxes3() {
@@ -1102,7 +1104,7 @@ function showResults() {
     data = JSON.parse(localStorage.getItem("levelResults")) || {};
     console.log(data)
 
-    for (let i = 1; i < 3; i++) {
+    for (let i = 1; i <= 3; i++) {
         console.log(data)
         if (!data[i]) continue;
         let string = ""
